@@ -5,6 +5,8 @@ const A = styled.a`
     width: 100px;
     height: 40px;
     padding: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
     box-sizing: content-box;
     :hover {
       outline: 2px solid #fff;
@@ -179,7 +181,7 @@ const Div = styled.div`
   /* Start Input Search */
   &.header-search {
     display: flex;
-    width: calc(75% - 170px);
+    width: calc(100% - 430px);
     min-width: 100px;
     border-radius: 10px;
     :focus-within {
