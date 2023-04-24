@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
-import Header from "./Components/Header/Header";
+import HeaderSection from "./Components/Header/HeaderSection";
 import Register from "./Components/Auth/Register/Register";
 import { auth } from "./firebase";
 import { useAuth } from "./Context/GlobalState";
@@ -9,6 +9,9 @@ import ForgotPassword from "./Components/Auth/ForgotPassword.js/ForgotPassword";
 import SignIn from "./Components/Auth/SignIn/Signin";
 import RequireAuth from "./RequireAuth";
 import Error from "./Components/Error/Error";
+import Home from "./Components/Home/Home";
+import FooterSection from "./Components/Footer/FooterSection";
+import CartSection from "./Components/Cart/CartSection";
 const App = () => {
   const { dispatch } = useAuth();
   useEffect(() => {
@@ -23,7 +26,16 @@ const App = () => {
   return (
     <div className="app">
       <Routes>
-        <Route path="/" element={<Header />} />
+        <Route
+          path="/"
+          element={
+            <>
+              <HeaderSection />
+              <Home />
+              <FooterSection />
+            </>
+          }
+        />
         <Route
           path="/signin"
           element={
@@ -41,6 +53,16 @@ const App = () => {
           }
         />
         <Route
+          path="/cart"
+          element={
+            <>
+              <HeaderSection />
+              <CartSection />
+              <FooterSection />
+            </>
+          }
+        />
+        <Route
           path="/forgot_password"
           element={
             <RequireAuth>
@@ -52,7 +74,7 @@ const App = () => {
           path="*"
           element={
             <>
-              <Header />
+              <HeaderSection />
               <Error />
             </>
           }

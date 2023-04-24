@@ -1,0 +1,34 @@
+[
+    {
+        "id": 1,
+        "name": "BENGOO G9000 Stereo Gaming Headset for PS4 PC Xbox One PS5 Controller",
+        "img": "/imgs/products/headphone1.png",
+        "price": 22,
+        "stars": 4,
+        "review": 9000
+    },
+    {
+        "id": 2,
+        "name": "SteelSeries Arctis Nova ProMulti-System Gaming Headset",
+        "img": "/imgs/products/headphone2.png",
+        "price": 21,
+        "stars": 3,
+        "review": 8000
+    },
+    {
+        "id": 3,
+        "name": "PHOINIKAS Gaming Headset for PS4, Xbox One, PC",
+        "img": "/imgs/products/headphone3.png",
+        "price": 23,
+        "stars": 3,
+        "review": 6000
+    },
+    {
+        "id": 4,
+        "name": "DIERYA X TMKB Wired Gaming Mouse",
+        "img": "/imgs/products/mouse1.png",
+        "price": 20,
+        "stars": 4,
+        "review": 5000
+    }
+]

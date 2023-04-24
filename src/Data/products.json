@@ -1,0 +1,134 @@
+[
+    {
+        "id": 1,
+        "name": "BENGOO G9000 Stereo Gaming Headset for PS4 PC Xbox One PS5 Controller, Noise Cancelling Over Ear Headphones with Mic, LED Light, Bass Surround, Soft Memory Earmuffs for Laptop Mac Nintendo NES Games",
+        "vip": "Best Sellar",
+        "img": "/imgs/products/headphone1.png",
+        "price": 22,
+        "discount": 49,
+        "stars": 4,
+        "review": 9000,
+        "save": "10%"
+    },
+    {
+        "id": 2,
+        "name": "SteelSeries Arctis Nova ProMulti-System Gaming Headset - Premium Hi-Fi Drivers - Hi-Res Audio - 360° Spatial Audio - GameDAC Gen 2 - ESS Sabre Quad-DAC - Stealth Retractable Mic - PC, PS5, PS4, Switch",
+        "vip": "",
+        "img": "/imgs/products/headphone2.png",
+        "price": 21,
+        "discount": 47,
+        "stars": 3,
+        "review": 8000,
+        "save": "7%"
+    },
+    {
+        "id": 3,
+        "name": "PHOINIKAS Gaming Headset for PS4, Xbox One, PC, Laptop, Mac, Nintendo Switch, 3.5MM PS4 Headset with Mic, Over Ear Headset, Noise-Cancelling Headset, Bass Surround, LED Light, Comfort Earmuff - Camo",
+        "vip": "",
+        "img": "/imgs/products/headphone3.png",
+        "price": 23,
+        "discount": 50,
+        "stars": 3,
+        "review": 6000,
+        "save": "8%"
+    },
+    {
+        "id": 4,
+        "name": "DIERYA X TMKB Wired Gaming Mouse, 12800DPI Optical Sensor, 6 Programmable Buttons, Customizable RGB Honeycomb Mouse, Drag-Free Paracord, Ergonomic Design Computer Mouse for Windows PC Gamers, White",
+        "vip": "Best Sellar",
+        "img": "/imgs/products/mouse1.png",
+        "price": 20,
+        "discount": 46,
+        "stars": 4,
+        "review": 5000,
+        "save": "5%"
+    },
+    {
+        "id": 5,
+        "name": "Logitech G502 HERO High Performance Wired Gaming Mouse, HERO 25K Sensor, 25,600 DPI, RGB, Adjustable Weights, 11 Programmable Buttons, On-Board Memory, PC / Mac, Black",
+        "vip": "",
+        "img": "/imgs/products/mouse2.png",
+        "price": 30,
+        "discount": 35,
+        "stars": 2,
+        "review": 6000,
+        "save": "7%"
+    },
+    {
+        "id": 6,
+        "name": "Razer DeathAdder Essential Gaming Mouse: 6400 DPI Optical Sensor - 5 Programmable Buttons - Mechanical Switches - Rubber Side Grips - Classic Black",
+        "vip": "Best Sellar",
+        "img": "/imgs/products/mouse3.png",
+        "price": 22,
+        "discount": 0,
+        "stars": 3,
+        "review": 9000,
+        "save": ""
+    },
+    {
+        "id": 7,
+        "name": "Razer Huntsman V2 Optical Gaming Keyboard: Fastest Linear Optical Switches Gen-2 w/Sound Dampeners & 8000Hz Polling Rate - Doubleshot PBT Keycaps - Dedicated Media Keys & Dial - Ergonomic Wrist Rest",
+        "vip": "Best Sellar",
+        "img": "/imgs/products/keyboard1.png",
+        "price": 22,
+        "discount": 49,
+        "stars": 1,
+        "review": 1000,
+        "save": "10%"
+    },
+    {
+        "id": 8,
+        "name": "Snpurdiri 60% Wired Gaming Keyboard, RGB Backlit Ultra-Compact Mini Keyboard, Waterproof Small Compact 61 Keys Keyboard for PC/Mac Gamer, Typist, Travel, Easy to Carry on Business Trip(Black-White)",
+        "vip": "Best Sellar",
+        "img": "/imgs/products/keyboard2.png",
+        "price": 22,
+        "discount": 0,
+        "stars": 4,
+        "review": 9000,
+        "save": "10%"
+    },
+    {
+        "id": 9,
+        "name": "Razer Ornata V3 Gaming Keyboard: Low-Profile Keys - Mecha-Membrane Switches - UV-Coated Keycaps - Backlit Media Keys - 10-Zone RGB Lighting - Spill-Resistant - Magnetic Wrist Wrest - Classic Black",
+        "vip": "Best Sellar",
+        "img": "/imgs/products/keyboard3.png",
+        "price": 30,
+        "discount": 50,
+        "stars": 4,
+        "review": 6000,
+        "save": "10%"
+    },
+    {
+        "id": 10,
+        "name": "AutoFull C3 Gaming Chair Ergonomic Office Chair with 3D Bionic Lumbar Support Racing Style PU Leather Computer PC Chair for Adults with Footrest,Brown",
+        "vip": "Best Sellar",
+        "img": "/imgs/products/chairs1.png",
+        "price": 200,
+        "discount": 0,
+        "stars": 2,
+        "review": 4000,
+        "save": ""
+    },
+    {
+        "id": 11,
+        "name": "Dowinx Gaming Chair Fabric with Pocket Spring Cushion, Massage Game Chair Cloth with Headrest, Ergonomic Computer Chair with Footrest 290LBS, Grey",
+        "vip": "",
+        "img": "/imgs/products/chairs2.png",
+        "price": 200,
+        "discount": 250,
+        "stars": 3,
+        "review": 8000,
+        "save": "10%"
+    },
+    {
+        "id": 12,
+        "name": "Dowinx Gaming Chair with Pocket Spring Cushion, Ergonomic Computer Chair High Back, Reclining Massage Game Chair Pu Leather 350LBS, Black",
+        "vip": "",
+        "img": "/imgs/products/chairs3.png",
+        "price": 250,
+        "discount": 0,
+        "stars": 4,
+        "review": 7000,
+        "save": ""
+    }
+]

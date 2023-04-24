@@ -50,13 +50,12 @@ const Button = styled.button`
     height: 30px;
     width: 100%;
     box-shadow: 0 0 8px rgba(255, 255, 255, 0.4) inset;
-    border-radius: 3px;
     font-size: 14px;
     cursor: pointer;
-    background: #ffd814;
+    background: var(--fourthColor);
     border-radius: 8px;
     :hover {
-      background-color: #f7ca00;
+      background: var(--fourthColorHover);
     }
     :focus {
       border: 2px solid #fff;

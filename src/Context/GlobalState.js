@@ -3,9 +3,27 @@ import AppReducer, { initialState } from "./AppReducer";
 const GlobalContext = createContext();
 const GlobalProvider = ({ children }) => {
   const [state, dispatch] = useReducer(AppReducer, initialState);
+  const quantityItems = state.basket.map((item) => {
+    return item.quantity;
+  });
+  const lengthItems = quantityItems.reduce((a, c) => {
+    return a + c;
+  }, 0);
+  const priceItems = state.basket.map((item) => {
+    return item.price * item.quantity;
+  });
+  const totalPrice = priceItems.reduce((a, c) => {
+    return a + c;
+  }, 0);
   return (
     <GlobalContext.Provider
-      value={{ basket: state.basket, user: state.user, dispatch }}
+      value={{
+        basket: state.basket,
+        user: state.user,
+        dispatch,
+        lengthItems,
+        totalPrice,
+      }}
     >
       {children}
     </GlobalContext.Provider>
