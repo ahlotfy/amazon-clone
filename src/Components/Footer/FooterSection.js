@@ -1,41 +1,21 @@
+// Basic
 import React from "react";
+// Style
 import {
-  Footer,
-  SignInSection,
-  ButtonSignIn,
-  Register,
   ButtonBackTop,
+  Footer,
   Col,
   Heading,
   Option,
   CopyRight,
 } from "./FooterStyle";
-import { Link } from "react-router-dom";
-import { useAuth } from "../../Context/GlobalState";
-const BackTop = () => {
-  window.scrollTo(0, 0);
-};
 const FooterSection = () => {
-  const { user } = useAuth();
+  const BackTop = () => {
+    window.scrollTo(0, 0);
+  };
+
   return (
-    <div>
-      {!user ? (
-        <SignInSection>
-          <hr />
-          <div>
-            <p>See personalized recommendations</p>
-            <Link to="/signin">
-              <ButtonSignIn>Sign in</ButtonSignIn>
-            </Link>
-            <Register>
-              New customer? <Link to="/register">Start here</Link>.
-            </Register>
-          </div>
-          <hr />
-        </SignInSection>
-      ) : (
-        ""
-      )}
+    <>
       <ButtonBackTop onClick={() => BackTop()}>Back To Top</ButtonBackTop>
       <Footer className="container">
         <Col>
@@ -84,7 +64,7 @@ const FooterSection = () => {
         </div>
         <p>© 1996-2023, Amazon.com, Inc. or its affiliates</p>
       </CopyRight>
-    </div>
+    </>
   );
 };
 

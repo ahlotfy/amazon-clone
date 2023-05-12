@@ -1,16 +1,23 @@
+// Basic
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App";
-import "./GlobalValues.scss";
 import { BrowserRouter as Router } from "react-router-dom";
+import App from "./App";
+// Context API
 import GlobalProvider from "./Context/GlobalState";
-import SlidesFun from "./Components/Home/SlidesFun";
+// Style
+import "./Style/Main.scss";
+import "./Style/fontawesome-icon/css/all.css";
+import "./Style/GlobalValues.scss";
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <Router>
       <GlobalProvider>
-        <App />
+        <React.Suspense>
+          <App />
+        </React.Suspense>
       </GlobalProvider>
     </Router>
   </React.StrictMode>

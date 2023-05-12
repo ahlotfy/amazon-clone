@@ -1,21 +1,44 @@
+// Basic
 import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+// Back End
+import { sendPasswordResetEmail } from "firebase/auth";
+import { auth } from "../../../firebase";
+// Images
 import logo from "../../../images/icon/logo-black.png";
 import errorIcon from "../../../images/icon/error-icon.png";
 import validIcon from "../../../images/icon/valid-icon.png";
-import { Div, Button } from "./ForgotPasswordStyle";
-import "../GlobalAuth.scss";
-import { Link, useNavigate } from "react-router-dom";
-import { sendPasswordResetEmail } from "firebase/auth";
-import { auth } from "../../../firebase";
+// Style
+import { Hint, UserStatus, ContinueBtn } from "./ForgotPasswordStyle";
+// Global Style
+import {
+  AuthBox,
+  Logo,
+  CaptionBox,
+  PromiseBox,
+  Heading,
+  FormSection,
+  InputRow,
+  Check,
+  InnerConditions,
+  RequiredHeading,
+  RequiredInput,
+  ExternalLine,
+  ExternalConditions,
+} from "../GlobalAuth.js";
+
 const ForgotPassword = () => {
   const Navigate = useNavigate();
   const [promise, setPromise] = useState(null);
   const [email, setEmail] = useState("");
   const [emailIsError, setEmailIsError] = useState(false);
+
+  // Valid Email
   const regex = /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/;
   const resetPassword = (e) => {
     e.preventDefault();
     setPromise(null);
+
     if (regex.test(email)) {
       sendPasswordResetEmail(auth, email)
         .then(() => {
@@ -33,46 +56,47 @@ const ForgotPassword = () => {
       setEmailIsError(true);
     }
   };
+
   return (
     <>
-      <Div className="auth-box">
-        <Div className="top-floor">
-          <Link to="/" className="header-logo">
+      <AuthBox>
+        <div className="top-floor">
+          <Logo as={Link} to="/" className="header-logo">
             <img src={logo} alt="amazon" />
-          </Link>
+          </Logo>
           {promise === true ? (
-            <Div className="box-valid">
+            <PromiseBox className="box-valid">
               <img src={validIcon} alt="valid"></img>
-              <Div className="title">
+              <div className="title">
                 <h4>There was a problem</h4>
-                <p>Check your inbox for reset password.</p>
-              </Div>
-            </Div>
+                <Check>Check your inbox for reset password.</Check>
+              </div>
+            </PromiseBox>
           ) : promise === false ? (
-            <Div className="box-error">
+            <PromiseBox className="box-error">
               <img src={errorIcon} alt="Error"></img>
-              <Div className="title">
+              <CaptionBox>
                 <h4>There was a problem</h4>
-                <p>
+                <Check>
                   We're sorry. We weren't able to identify you given the
                   information provided.
-                </p>
-              </Div>
-            </Div>
+                </Check>
+              </CaptionBox>
+            </PromiseBox>
           ) : (
             ""
           )}
-          <Div className="form-section">
-            <h1 className="heading">Password assistance</h1>
-            <Div className="hint-forgot-password">
-              <p>
+          <FormSection>
+            <Heading>Password assistance</Heading>
+            <Hint>
+              <Check>
                 Enter the email address associated with your Amazon account.
-              </p>
-            </Div>
+              </Check>
+            </Hint>
             <form>
-              <Div className="row-input input-email-forgot">
-                <label>Email</label>
-                <input
+              <InputRow>
+                <RequiredHeading>Email</RequiredHeading>
+                <RequiredInput
                   className={emailIsError ? "error-input" : ""}
                   type="text"
                   value={email}
@@ -81,35 +105,38 @@ const ForgotPassword = () => {
                   }}
                 />
                 {emailIsError ? (
-                  <Div className="error-input-text">
+                  <div className="error-input-text">
                     <span>i</span> Email Not Valid.
-                  </Div>
+                  </div>
                 ) : (
                   ""
                 )}
-              </Div>
-              <Button className="continue" onClick={(e) => resetPassword(e)}>
+              </InputRow>
+              <ContinueBtn
+                className="continue"
+                onClick={(e) => resetPassword(e)}
+              >
                 Continue
-              </Button>
+              </ContinueBtn>
             </form>
-          </Div>
-          <Div className="user-status">
+          </FormSection>
+          <UserStatus>
             <h4>Has your email or mobile number changed?</h4>
-            <p>
+            <InnerConditions>
               If you no longer use the email address associated with your Amazon
               account, you may contact <span>Customer Service</span> for help
               restoring access to your account.
-            </p>
-          </Div>
-        </Div>
-      </Div>
-      <Div className="external-line" />
-      <Div className="the-external-conditions">
+            </InnerConditions>
+          </UserStatus>
+        </div>
+      </AuthBox>
+      <ExternalLine />
+      <ExternalConditions>
         <span> Conditions of Use </span>
         <span> Privacy Notice </span>
         <span> Help </span>
         <p>© 1996-2023, Amazon.com, Inc. or its affiliates</p>
-      </Div>
+      </ExternalConditions>
     </>
   );
 };

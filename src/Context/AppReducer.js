@@ -1,7 +1,11 @@
-export const initialState = {
-  basket: [],
-  user: null,
-};
+const cloud = localStorage.getItem("data")
+  ? JSON.parse(localStorage.getItem("data"))
+  : {
+      basket: [],
+      user: null,
+    };
+
+export const initialState = cloud;
 const AppReducer = (state = initialState, action) => {
   switch (action.type) {
     case "SET_USER":

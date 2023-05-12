@@ -1,19 +1,31 @@
+// Basic
 import React, { useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
-import "./App.css";
+// Back End
+import { auth } from "./firebase";
+// Protect Auth
+import RequireUser from "./Setting/RequireUser";
+import NotRequireUser from "./Setting/NotRequireUser";
+// Context API
+import { useAuth } from "./Context/GlobalState";
+// Blur
+import BlurProvider from "./Context/Blur/Blur";
+// Components
 import HeaderSection from "./Components/Header/HeaderSection";
 import Register from "./Components/Auth/Register/Register";
-import { auth } from "./firebase";
-import { useAuth } from "./Context/GlobalState";
 import ForgotPassword from "./Components/Auth/ForgotPassword.js/ForgotPassword";
 import SignIn from "./Components/Auth/SignIn/Signin";
-import RequireAuth from "./RequireAuth";
-import Error from "./Components/Error/Error";
-import Home from "./Components/Home/Home";
+import Error from "./Components/ErrorPage/Error";
+import HomeSection from "./Components/HomePage/HomeSection";
 import FooterSection from "./Components/Footer/FooterSection";
-import CartSection from "./Components/Cart/CartSection";
+import CartSection from "./Components/CartPage/CartSection";
+import PaymentSection from "./Components/PaymentPage/PaymentSection";
+import ItemPageSection from "./Components/ItemPage/ItemPageSection";
+import SearchSection from "./Components/SearchPage/SearchSection";
+
 const App = () => {
   const { dispatch } = useAuth();
+
   useEffect(() => {
     auth.onAuthStateChanged((authUser) => {
       if (authUser) {
@@ -23,64 +35,133 @@ const App = () => {
       }
     });
   }, [dispatch]);
+
   return (
-    <div className="app">
+    <>
       <Routes>
+        {/* Start Home Page*/}
         <Route
           path="/"
           element={
             <>
-              <HeaderSection />
-              <Home />
+              <BlurProvider>
+                <HeaderSection />
+                <HomeSection />
+              </BlurProvider>
               <FooterSection />
             </>
           }
         />
+        {/* End Home Page */}
+
+        {/* Start Search Page */}
+        <Route
+          path="/search"
+          element={
+            <>
+              <BlurProvider>
+                <HeaderSection />
+                <SearchSection />
+              </BlurProvider>
+              <FooterSection />
+            </>
+          }
+        />
+        {/* End Search Page */}
+
+        {/* Start SignIn Page*/}
         <Route
           path="/signin"
           element={
-            <RequireAuth>
+            <NotRequireUser>
               <SignIn />
-            </RequireAuth>
+            </NotRequireUser>
           }
         />
+        {/* End SignIn Page*/}
+
+        {/* Start Register Page */}
         <Route
           path="/register"
           element={
-            <RequireAuth>
+            <NotRequireUser>
               <Register />
-            </RequireAuth>
+            </NotRequireUser>
           }
         />
+        {/* End Register Page */}
+
+        {/* Start Cart Page */}
         <Route
           path="/cart"
           element={
             <>
-              <HeaderSection />
-              <CartSection />
+              <BlurProvider>
+                <HeaderSection />
+                <CartSection />
+              </BlurProvider>
               <FooterSection />
             </>
           }
         />
+        {/* End Cart Page*/}
+
+        {/* Start Forgot Password  Page */}
         <Route
           path="/forgot_password"
           element={
-            <RequireAuth>
+            <NotRequireUser>
               <ForgotPassword />
-            </RequireAuth>
+            </NotRequireUser>
           }
         />
+        {/* End Forgot Password Page */}
+
+        {/* Start Payment Page */}
+        <Route
+          path="/payment"
+          element={
+            <RequireUser>
+              <BlurProvider>
+                <HeaderSection />
+                <PaymentSection />
+              </BlurProvider>
+              <FooterSection />
+            </RequireUser>
+          }
+        />
+        {/* End Payment Page */}
+
+        {/* Start Item Page */}
+        <Route
+          path="/item_page"
+          element={
+            <>
+              <BlurProvider>
+                <HeaderSection />
+                <ItemPageSection />
+              </BlurProvider>
+              <FooterSection />
+            </>
+          }
+        />
+        {/* End Item Page */}
+
+        {/* Start Error Page */}
         <Route
           path="*"
           element={
             <>
-              <HeaderSection />
-              <Error />
+              <BlurProvider>
+                <HeaderSection />
+                <Error />
+              </BlurProvider>
             </>
           }
         />
+        {/* End Error Page */}
       </Routes>
-    </div>
+    </>
   );
 };
 

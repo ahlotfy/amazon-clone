@@ -1,11 +1,38 @@
+// Basic
 import React, { useState } from "react";
-import logo from "../../../images/icon/logo-black.png";
-import errorIcon from "../../../images/icon/error-icon.png";
-import { Div, A, Button } from "./SigninStyle";
-import "../GlobalAuth.scss";
 import { Link, useNavigate } from "react-router-dom";
+// Back End
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../../firebase";
+// Images
+import logo from "../../../images/icon/logo-black.png";
+import errorIcon from "../../../images/icon/error-icon.png";
+// Style
+import {
+  NewAccount,
+  CreateNewAccount,
+  CreateNewAccountBtn,
+  UserStatus,
+  ForgotPassword,
+  SignInBtn,
+} from "./SigninStyle";
+// Global Style
+import {
+  AuthBox,
+  Logo,
+  PromiseBox,
+  CaptionBox,
+  Heading,
+  FormSection,
+  InputRow,
+  Check,
+  InnerConditions,
+  RequiredHeading,
+  RequiredInput,
+  ExternalLine,
+  ExternalConditions,
+} from "../GlobalAuth.js";
+
 const SignIn = () => {
   const [promise, setPromise] = useState(null);
   const [email, setEmail] = useState("");
@@ -13,11 +40,13 @@ const SignIn = () => {
   const [password, setPassword] = useState("");
   const [passwordIsError, setPasswordIsError] = useState(false);
   const Navigate = useNavigate();
+  // Valid Email
   const regex = /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/;
   const signIn = (e) => {
     e.preventDefault();
     setEmailIsError(false);
     setPasswordIsError(false);
+
     if (regex.test(email) && password.length >= 6) {
       signInWithEmailAndPassword(auth, email, password)
         .then((auth) => {
@@ -29,36 +58,38 @@ const SignIn = () => {
           setPromise(false);
         });
     }
+
     if (!regex.test(email)) {
       setEmailIsError(true);
     }
+
     if (password.length < 6) {
       setPasswordIsError(true);
     }
   };
   return (
     <>
-      <Div className="auth-box">
-        <Link to="/" className="header-logo">
+      <AuthBox>
+        <Logo as={Link} to="/" className="header-logo">
           <img src={logo} alt="amazon" />
-        </Link>
+        </Logo>
         {promise === false ? (
-          <Div className="box-error">
+          <PromiseBox className="box-error">
             <img src={errorIcon} alt="Error"></img>
-            <Div className="title">
+            <CaptionBox>
               <h4>There was a problem</h4>
-              <p>We're sorry. Email or Password not found.</p>
-            </Div>
-          </Div>
+              <Check>We're sorry. Email or Password not found.</Check>
+            </CaptionBox>
+          </PromiseBox>
         ) : (
           ""
         )}
-        <Div className="form-section">
-          <h1 className="heading">Sign in</h1>
+        <FormSection>
+          <Heading>Sign in</Heading>
           <form>
-            <Div className="row-input">
-              <label>Email</label>
-              <input
+            <InputRow>
+              <RequiredHeading>Email</RequiredHeading>
+              <RequiredInput
                 className={emailIsError ? "error-input" : ""}
                 type="text"
                 value={email}
@@ -66,16 +97,16 @@ const SignIn = () => {
                 onChange={(e) => setEmail(e.target.value)}
               />
               {emailIsError ? (
-                <Div className="error-input-text">
+                <div className="error-input-text">
                   <span>i</span> Email Not Valid or Found.
-                </Div>
+                </div>
               ) : (
                 ""
               )}
-            </Div>
-            <Div className="row-input">
-              <label>Password</label>
-              <input
+            </InputRow>
+            <InputRow>
+              <RequiredHeading>Password</RequiredHeading>
+              <RequiredInput
                 className={passwordIsError ? "error-input" : ""}
                 type="password"
                 autoComplete=""
@@ -83,46 +114,44 @@ const SignIn = () => {
                 onChange={(e) => setPassword(e.target.value)}
               />
               {passwordIsError ? (
-                <Div className="error-input-text">
+                <div className="error-input-text">
                   <span>i</span> Password Not Vaild.
-                </Div>
+                </div>
               ) : (
                 ""
               )}
-            </Div>
-            <Button className="sign-in" onClick={signIn}>
-              Sign in
-            </Button>
-            <p className="the-inner-conditions">
+            </InputRow>
+            <SignInBtn onClick={signIn}>Sign in</SignInBtn>
+            <InnerConditions>
               By continuing, you agree to Amazon's{" "}
               <span>Conditions of Use</span> and <span>Privacy Notice</span>.
-            </p>
-            <A as={Link} to="/forgot_password" className="help">
+            </InnerConditions>
+            <ForgotPassword as={Link} to="/forgot_password">
               Forgot your password?
-            </A>
+            </ForgotPassword>
           </form>
-        </Div>
-        <Div className="user-status">
-          <Div className="new-account">
+        </FormSection>
+        <UserStatus>
+          <NewAccount>
             <hr />
             <span>New to Amazon?</span>
-          </Div>
-          <Div className="create-new-account">
+          </NewAccount>
+          <CreateNewAccount>
             <Link to="/register">
-              <Button className="create-new-account-btn">
+              <CreateNewAccountBtn>
                 Create your Amazon account
-              </Button>
+              </CreateNewAccountBtn>
             </Link>
-          </Div>
-        </Div>
-      </Div>
-      <Div className="external-line" />
-      <Div className="the-external-conditions">
+          </CreateNewAccount>
+        </UserStatus>
+      </AuthBox>
+      <ExternalLine />
+      <ExternalConditions>
         <span> Conditions of Use </span>
         <span> Privacy Notice </span>
         <span> Help </span>
         <p>© 1996-2023, Amazon.com, Inc. or its affiliates</p>
-      </Div>
+      </ExternalConditions>
     </>
   );
 };

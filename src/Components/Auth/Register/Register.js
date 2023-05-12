@@ -1,10 +1,31 @@
+// Basic
 import React, { useState } from "react";
-import logo from "../../../images/icon/logo-black.png";
-import { Div, Button } from "./RegisterStyle";
-import "../GlobalAuth.scss";
 import { Link, useNavigate } from "react-router-dom";
+// Back End
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../../firebase";
+// Images
+import logo from "../../../images/icon/logo-black.png";
+// Style
+import {
+  Hint,
+  InternalLine,
+  AlreadyHaveAccount,
+  ContinueBtn,
+} from "./RegisterStyle";
+// Global Style
+import {
+  AuthBox,
+  Logo,
+  Heading,
+  FormSection,
+  InputRow,
+  InnerConditions,
+  RequiredHeading,
+  RequiredInput,
+  ExternalLine,
+  ExternalConditions,
+} from "../GlobalAuth.js";
 const Register = () => {
   const Navigate = useNavigate();
   const [email, setEmail] = useState("");
@@ -14,6 +35,7 @@ const Register = () => {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [passwordIsError, setPasswordIsError] = useState(false);
   const register = () => {
+    // Reset Error
     setEmailIsError(false);
     setPasswordIsError(false);
     if (
@@ -40,33 +62,33 @@ const Register = () => {
   };
   return (
     <>
-      <Div className="auth-box">
-        <Div className="top-floor">
-          <Link to="/" className="header-logo">
+      <AuthBox>
+        <div className="top-floor">
+          <Logo as={Link} to="/" className="header-logo">
             <img src={logo} alt="amazon" />
-          </Link>
-          <Div className="form-section">
-            <h1 className="heading">Create account</h1>
+          </Logo>
+          <FormSection>
+            <Heading>Create account</Heading>
             <form>
-              <Div className="row-input">
-                <label>Email</label>
-                <input
+              <InputRow>
+                <RequiredHeading>Email</RequiredHeading>
+                <RequiredInput
                   className={emailIsError ? "error-input" : ""}
                   type="text"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                 />
                 {emailIsError ? (
-                  <Div className="error-input-text">
+                  <div className="error-input-text">
                     <span>i</span> Email Not Valid.
-                  </Div>
+                  </div>
                 ) : (
                   ""
                 )}
-              </Div>
-              <Div className="row-input">
-                <label>Password</label>
-                <input
+              </InputRow>
+              <InputRow>
+                <RequiredHeading>Password</RequiredHeading>
+                <RequiredInput
                   className={passwordIsError ? "error-input" : ""}
                   type="password"
                   placeholder="At least 6 characters"
@@ -77,18 +99,19 @@ const Register = () => {
                   onChange={(e) => setPassword(e.target.value)}
                 />
                 {passwordIsError ? (
-                  <Div className="error-input-text">
+                  <div className="error-input-text">
                     <span>i</span> Password max length 6.
-                  </Div>
+                  </div>
                 ) : (
-                  <Div className="hint-password">
+                  // Hint Password
+                  <Hint>
                     <span>i</span> Passwords must be at least 6 characters.
-                  </Div>
+                  </Hint>
                 )}
-              </Div>
-              <Div className="row-input">
-                <label>Re-enter password</label>
-                <input
+              </InputRow>
+              <InputRow>
+                <RequiredHeading>Re-enter password</RequiredHeading>
+                <RequiredInput
                   className={passwordIsError ? "error-input" : ""}
                   type="password"
                   autoComplete=""
@@ -98,14 +121,14 @@ const Register = () => {
                   onChange={(e) => setConfirmPassword(e.target.value)}
                 />
                 {passwordIsError ? (
-                  <Div className="error-input-text">
+                  <div className="error-input-text">
                     <span>i</span> Password not match.
-                  </Div>
+                  </div>
                 ) : (
                   ""
                 )}
-              </Div>
-              <Button
+              </InputRow>
+              <ContinueBtn
                 className="continue"
                 onClick={(e) => {
                   register(e);
@@ -113,28 +136,28 @@ const Register = () => {
                 }}
               >
                 Continue
-              </Button>
-              <p className="the-inner-conditions">
+              </ContinueBtn>
+              <InnerConditions>
                 By creating an account,, you agree to Amazon's <br />
                 <span>Conditions of Use</span> and <span>Privacy Notice</span>.
-              </p>
-              <Div className="internal-line" />
-              <Div className="already-have-an-account">
+              </InnerConditions>
+              <InternalLine />
+              <AlreadyHaveAccount>
                 <p>
                   Already have an account? <Link to="/signin">Sign In</Link>{" "}
                 </p>
-              </Div>
+              </AlreadyHaveAccount>
             </form>
-          </Div>
-        </Div>
-      </Div>
-      <Div className="external-line" />
-      <Div className="the-external-conditions">
+          </FormSection>
+        </div>
+      </AuthBox>
+      <ExternalLine />
+      <ExternalConditions>
         <span> Conditions of Use </span>
         <span> Privacy Notice </span>
         <span> Help </span>
         <p>© 1996-2023, Amazon.com, Inc. or its affiliates</p>
-      </Div>
+      </ExternalConditions>
     </>
   );
 };

@@ -1,0 +1,78 @@
+[
+    {
+        "id": 1,
+        "img": "/imgs/home_products/bag_displayed.jpg",
+        "name": "Bags| Up 15%",
+        "type": "bag"
+    },
+    {
+        "id": 2,
+        "img": "/imgs/home_products/scale-displayed.jpg",
+        "name": "Scales | Up 10kg",
+        "type": "scale"
+    },
+    {
+        "id": 3,
+        "img": "/imgs/home_products/camera_displayed.jpg",
+        "name": "Security cameras",
+        "type": "camera"
+    },
+    {
+        "id": 4,
+        "img": "/imgs/home_products/labtop_displayed.jpg",
+        "name": "Lab tops | Up 20%",
+        "type": "labtop"
+    },
+    {
+        "id": 5,
+        "img": "/imgs/home_products/mobile_displayed.jpg",
+        "name": "Smart Mobiles",
+        "type": "mobile"
+    },
+    {
+        "id": 6,
+        "img": "/imgs/home_products/playstation_displayed.jpg",
+        "name": "Playstations",
+        "type": "playstation"
+    },
+    {
+        "id": 7,
+        "img": "/imgs/home_products/watch_displayed.jpg",
+        "name": "Watchs",
+        "type": "watch"
+    },
+    {
+        "id": 8,
+        "group": true,
+        "digital": [
+            {
+                "id": 8,
+                "img": "/imgs/home_products/digital/mouse_displayed.jpg",
+                "name": "Mouses Lazer",
+                "type": "mouse",
+                "group": "digital"
+            },
+            {
+                "id": 9,
+                "img": "/imgs/home_products/digital/keyboard_displayed.jpg",
+                "name": "Keyboards",
+                "type": "keyboard",
+                "group": "digital"
+            },
+            {
+                "id": 10,
+                "img": "/imgs/home_products/digital/headphone_displayed.jpg",
+                "name": "Headphones",
+                "type": "headphone",
+                "group": "digital"
+            },
+            {
+                "id": 11,
+                "img": "/imgs/home_products/digital/chairs_displayed.jpg",
+                "name": "Chaires",
+                "type": "chairs",
+                "group": "digital"
+            }
+        ]
+    }
+]

@@ -1,8 +1,15 @@
-import { createContext, useContext, useReducer } from "react";
+// Basic
+import { createContext, useContext, useEffect, useReducer } from "react";
+// Reducer
 import AppReducer, { initialState } from "./AppReducer";
+// Products
 const GlobalContext = createContext();
+
 const GlobalProvider = ({ children }) => {
   const [state, dispatch] = useReducer(AppReducer, initialState);
+  useEffect(() => {
+    localStorage.setItem("data", JSON.stringify(state));
+  });
   const quantityItems = state.basket.map((item) => {
     return item.quantity;
   });
