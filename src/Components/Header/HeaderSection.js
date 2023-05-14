@@ -1,6 +1,6 @@
 // Basic
 import React, { useEffect, useRef, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 // Context API
 import { useAuth } from "../../Context/GlobalState";
 import { useBlur } from "../../Context/Blur/Blur";

@@ -4,7 +4,7 @@ import AuthExternal from "../Auth/AuthExternal/AuthExternal";
 import SuggestionSection from "./Suggestion/SuggestionSection";
 import PartOneSection from "./PartOne/PartOneSection";
 import PartTwoSection from "./PartTwo/PartTwoSection";
-import { json, useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import PRODUCTS_DATA from "../../Data/products.json";
 
 const ItemPageSection = () => {
