@@ -30,55 +30,17 @@ const BoxImg = styled.div`
     min-height: 300px;
     max-height: 400px;
     margin: auto;
-
     @media (max-width: 992px) {
       margin: 0px auto 0px 0px;
     }
     @media (max-width: 768px) {
       margin: auto;
     }
-    .img-product {
+    img {
       max-width: 400px;
       min-width: 400px;
-
       max-height: 400px;
-      .small-img {
-        max-width: 400px;
-        min-width: 400px;
-        max-height: 400px;
-        object-fit: contain;
-
-        img + div {
-          height: 100% !important;
-        }
-      }
-      @media (max-width: 768px) {
-        cursor: inherit !important;
-      }
-
-      .large-img {
-        top: 50% !important;
-        transform: translateY(-50%) !important;
-        width: 216% !important;
-        object-position: center;
-        min-height: 600px;
-        @media (max-width: 1400px) {
-          width: 176% !important;
-        }
-        @media (max-width: 1200px) {
-          width: calc(90% + 1px) !important;
-        }
-        @media (max-width: 992px) {
-          width: calc(74% + 2px) !important;
-        }
-        @media (max-width: 768px) {
-          display: none;
-        }
-        margin-left: 30px !important;
-        background-color: #fff;
-        z-index: 299;
-        box-shadow: 0px 0px 8px 0px black !important;
-      }
+      object-fit: contain;
     }
   }
 `;

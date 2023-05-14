@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import {
   PartOne,
   BoxImg,
@@ -14,52 +14,22 @@ import {
   About,
 } from "./PartOneStyle";
 
-import ReactImageMagnify from "react-image-magnify";
 import { Price, Return } from "../ItemPageStyle";
 import formatCurrency from "../../../Setting/formatCurrency";
 
-const smallScreen = window.matchMedia("(max-width: 768px)");
-
 const PartOneSection = ({ product }) => {
-  const [isSmallScreen, SetIsSmallScreen] = useState(false);
-
   const [
     { name, img, price, discount, review, save, stars, brand, color, material },
   ] = product;
-
-  useEffect(() => {
-    window.onresize = () => {
-      SetIsSmallScreen(smallScreen.matches);
-    };
-  });
 
   return (
     <PartOne>
       {/* 1- Img */}
       <BoxImg>
         <div className="wrap-img">
-          <ReactImageMagnify
-            className="img-product"
-            imageClassName="small-img"
-            enlargedImageContainerClassName="large-img"
-            enlargedImagePosition={isSmallScreen ? "over" : "beside"}
-            {...{
-              smallImage: {
-                alt: name ? name : "",
-                isFluidWidth: true,
-                src: img ? img : "",
-              },
-              largeImage: {
-                alt: name ? name : "",
-                src: img ? img : "",
-                width: 1200,
-                height: 1800,
-              },
-            }}
-          />
+          <img src={img} className="smail_img" alt={name} />
         </div>
       </BoxImg>
-
       <Caption>
         {/* Start Top */}
         <Top>
