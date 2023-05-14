@@ -4,7 +4,7 @@ const Suggestion = styled.div`
   h3 {
     padding: 5px 10px 30px 10px;
   }
-  a.item-page {
+  a.item_page {
     width: 100%;
   }
 `;

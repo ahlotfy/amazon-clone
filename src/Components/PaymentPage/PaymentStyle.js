@@ -31,22 +31,12 @@ const DetailsBox = styled.div`
   }
 `;
 
-const RequiredHeading = styled.label`
-  font-size: 16px;
-  margin-bottom: 10px;
-  min-width: 100px;
-  &.holder_name {
-    padding-right: 20px;
-    margin-bottom: 10px !important;
-    display: block;
-  }
-`;
 const RequiredInput = styled.input`
-  &[type="text"] {
-    width: 80%;
-  }
   @media (max-width: 576px) {
     width: 100% !important;
+  }
+  &[type="text"] {
+    width: 80%;
   }
   height: 40px;
   outline: 1px solid #cfcbcb;
@@ -90,6 +80,15 @@ const CreditCard = styled.form`
   display: flex;
   align-items: center;
   max-width: 100%;
+  padding: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
+  @media (max-width: 576px) {
+    padding: 20px 0px;
+  }
+  & .StripeElement {
+    width: 100%;
+  }
 `;
 const InnerRow = styled.div`
   width: 100%;
@@ -106,64 +105,14 @@ const InnerRow = styled.div`
     flex-direction: column;
   }
 `;
-
-const CardNumber = styled.div`
-  flex: 1;
-  padding: 20px;
-  padding-top: 5px;
-  input {
-    width: 100%;
-  }
-  label {
-    display: flex;
-    align-items: center;
-    i {
-      padding-left: 10px;
-      padding-right: 10px;
-      font-size: 18px;
-    }
-  }
-  @media (max-width: 576px) {
-    padding: 20px 0px;
-  }
-`;
-const CardDetails = styled.div`
-  display: flex;
-  @media (max-width: 576px) {
-    flex-direction: column;
-    align-items: center;
-  }
-  input {
-    width: 56.6666px;
-    @media (max-width: 576px) {
-      width: 100%;
-    }
-    margin: 5px;
-    text-align: center;
-  }
-`;
-const CardHolder = styled.div`
-  padding: 20px;
-  width: 100%;
-  input {
-    @media (max-width: 768px) {
-      width: 100%;
-    }
-    @media (max-width: 576px) {
-      margin: 0;
-    }
-  }
-  @media (max-width: 576px) {
-    display: block;
-    padding: 20px 0px;
-  }
-`;
 const TotalPrice = styled.div`
-  padding: 20px;
+  padding: 10px;
   text-align: center;
 `;
 const BuyBtn = styled.button`
-  height: 40px;
+  min-height: 35px;
+  color: black;
+  font-weight: 500;
   width: 100%;
   box-shadow: 0 1px 0 rgba(255, 255, 255, 0.4) inset;
   font-size: 14px;
@@ -180,6 +129,13 @@ const BuyBtn = styled.button`
     outline: 1px solid #000;
     box-shadow: 0px 0px 2px 3px #81e8f9;
   }
+  &.processing {
+    opacity: 0.5;
+    cursor: default;
+    :hover {
+      background: linear-gradient(to bottom, #f7dfa5, #f0c14b);
+    }
+  }
   @media (max-width: 576px) {
     max-width: 150px;
   }
@@ -187,15 +143,11 @@ const BuyBtn = styled.button`
 export {
   Payment,
   DetailsBox,
-  RequiredHeading,
   RequiredInput,
   Row,
   Address,
   CreditCard,
-  CardHolder,
   InnerRow,
-  CardNumber,
-  CardDetails,
   TotalPrice,
   BuyBtn,
 };

@@ -53,16 +53,12 @@ const SearchSection = () => {
           return (
             <ProductBox key={id}>
               {/* 1- Img */}
-              <ProductImg>
-                <Link target="_blank" to={`/item_page#${id}`}>
-                  <Img src={img} alt={name} />
-                </Link>
+              <ProductImg as={Link} to={`/item_page#${id}`}>
+                <Img src={img} alt={name} />
               </ProductImg>
               <ProductCaption>
                 {/* 2- Name */}
-                <Link target="_blank" to={`/item_page#${id}`}>
-                  {name}
-                </Link>
+                <Link to={`/item_page#${id}`}>{name}</Link>
                 <Ratings>
                   {/* 3- Stars */}
                   <Stars>

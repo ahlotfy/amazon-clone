@@ -11,7 +11,7 @@ import ViewedSection from "../ViewedItems/ViewedSection";
 import { useAuth } from "../../Context/GlobalState";
 // Style
 import {
-  Cart,
+  Container,
   ShoppingLeft,
   EmptyCart,
   ImgBox,
@@ -23,7 +23,6 @@ import {
   ShoppingRight,
   TotalCart,
   ButtonCheckOut,
-  ViewedBox,
 } from "./CartStyle";
 // Component
 import BasketSection from "./Basket/BasketSection";
@@ -32,7 +31,7 @@ const CartSection = () => {
   const { basket, lengthItems, totalPrice, user } = useAuth();
 
   return (
-    <Cart className="container">
+    <Container className="container">
       {/* Start Left Section */}
       <ShoppingLeft>
         {lengthItems > 0 ? (
@@ -95,12 +94,10 @@ const CartSection = () => {
           ""
         )}
         {/* Viewed Page */}
-        <ViewedBox>
-          <ViewedSection />
-        </ViewedBox>
+        <ViewedSection />
       </ShoppingRight>
       {/* End Right Section */}
-    </Cart>
+    </Container>
   );
 };
 

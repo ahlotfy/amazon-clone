@@ -4,7 +4,6 @@ const cloud = localStorage.getItem("data")
       basket: [],
       user: null,
     };
-
 export const initialState = cloud;
 const AppReducer = (state = initialState, action) => {
   switch (action.type) {
@@ -47,6 +46,11 @@ const AppReducer = (state = initialState, action) => {
       } else {
         return { ...state };
       }
+    case "EMPTY_BASKET":
+      return {
+        ...state,
+        basket: [],
+      };
     default:
       return state;
   }

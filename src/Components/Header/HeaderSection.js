@@ -36,8 +36,8 @@ const HeaderSection = () => {
   const [showValueInInput, setShowValueInInput] = useState(inputValue);
   //  Type Products For Show In Suggestions List.
   const handleInput = (e) => {
-    setInputValue(e.target.value);
-    setShowValueInInput(e.target.value);
+    setInputValue(e.target.value.toLowerCase());
+    setShowValueInInput(e.target.value.toLowerCase());
     setSelectedItem(-1);
 
     if (data.length > 0 && e.target.value.length > 0) {
@@ -183,7 +183,7 @@ const HeaderSection = () => {
             <div className="optionLineTwo">{user ? "Sign Out" : "Sign In"}</div>
           </HeaderOptions>
         </Link>
-        <Link to="/payment">
+        <Link to="/orders">
           <HeaderOptions>
             <div className="optionLineOne">Returns</div>
             <div className="optionLineTwo">& Orders</div>

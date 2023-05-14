@@ -4,7 +4,7 @@ import React from "react";
 import AuthExternal from "../Auth/AuthExternal/AuthExternal";
 // Function Slide For Move
 import HomeProductsSection from "./HomeProducts/HomeProductsSection";
-import SlidesFun from "./SlidesFun";
+import SlidesFun from "./Slides/SlidesFun";
 // Style
 import { Home, Container, Slider, Slids, Wrap, Clear } from "./HomeStyle";
 

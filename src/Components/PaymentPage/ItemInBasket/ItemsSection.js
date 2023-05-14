@@ -6,7 +6,7 @@ import {
   Ratings,
   Stars,
   Review,
-  InputQuantity,
+  Quantity,
   Price,
   DeleteBtn,
   ProductCaption,
@@ -47,7 +47,6 @@ const ItemsSection = () => {
                     <Link target="_blank" to={`/item_page#${id}`}>
                       <p>{name}</p>
                     </Link>
-
                     <Ratings>
                       {/* 3- Stars */}
                       <Stars>
@@ -105,11 +104,9 @@ const ItemsSection = () => {
                       <Review>{review}</Review>
                     </Ratings>
                     {/* 5- Product Quantity */}
-                    <InputQuantity
-                      type="number"
-                      readOnly
-                      value={item ? item.quantity : 1}
-                    />
+                    <Quantity>
+                      <h5>Quantity : {item ? item.quantity : 1}</h5>
+                    </Quantity>
                     {/* 6- Price */}
                     <Price>{formatCurrency(price * +Item?.quantity)}</Price>
                     <DeleteBtn onClick={() => deleteFromBasket(id)}>

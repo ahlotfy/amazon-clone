@@ -1,7 +1,9 @@
 // Basic
-import React from "react";
-import { Link } from "react-router-dom";
-import { doc } from "firebase/firestore";
+import React, { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { doc, setDoc } from "firebase/firestore";
+import { dataBase } from "../../firebase";
+import shortid from "shortid";
 // Component
 import ItemsSection from "./ItemInBasket/ItemsSection";
 // Context API
@@ -11,28 +13,39 @@ import {
   Payment,
   DetailsBox,
   Row,
-  RequiredHeading,
   RequiredInput,
   Address,
   CreditCard,
-  CardHolder,
   InnerRow,
-  CardNumber,
-  CardDetails,
   TotalPrice,
   BuyBtn,
 } from "./PaymentStyle";
 // Format Currency
 import formatCurrency from "../../Setting/formatCurrency";
 import { CardElement } from "@stripe/react-stripe-js";
-// import { dataBase } from "../../firebase";
-
+const idsOrders = shortid.generate();
 const PaymentSection = () => {
-  const { lengthItems, totalPrice, user } = useAuth();
+  const { lengthItems, totalPrice, user, dispatch, basket } = useAuth();
+  const navigate = useNavigate();
+  const [processing, setProcessing] = useState(false);
   const handleSubmit = (e) => {
     e.preventDefault();
+    const ref = doc(dataBase, "users", user?.uid, "orders", idsOrders);
+    setDoc(ref, {
+      basket: basket,
+      amount: totalPrice,
+      created: new Date(),
+    });
+    setProcessing(true);
+    setTimeout(() => {
+      dispatch({
+        type: "EMPTY_BASKET",
+      });
+      navigate("/orders", { replace: true });
+    }, 2000);
+    console.log("hello");
   };
-  const handleChange = () => {};
+
   return (
     <Payment>
       <h2>
@@ -56,46 +69,18 @@ const PaymentSection = () => {
           <h3>Payment Method</h3>
           {/* Stripe */}
           <CreditCard onSubmit={(e) => handleSubmit(e)}>
-            <InnerRow>
-              <CardNumber>
-                <RequiredHeading htmlFor="card_number">
-                  <i className="fa-solid fa-credit-card" />
-                  Card number
-                </RequiredHeading>
-                <RequiredInput type="tel" id="card_number" />
-              </CardNumber>
-              <CardDetails>
-                <input
-                  type="tel"
-                  placeholder="Month"
-                  max={12}
-                  min={1}
-                  maxLength={2}
-                />
-                <input
-                  type="tel"
-                  placeholder="Year"
-                  max={2050}
-                  min={2000}
-                  maxLength={4}
-                />
-                <input type="tel" placeholder="CVC" maxLength={3} />
-              </CardDetails>
-            </InnerRow>
-            <InnerRow>
-              <CardHolder>
-                <RequiredHeading htmlFor="holder_name" className="holder_name">
-                  Holder name
-                </RequiredHeading>
-                <RequiredInput type="text" id="holder_name" />
-              </CardHolder>
-            </InnerRow>
+            <CardElement />
             <InnerRow>
               <TotalPrice>
                 <h3>Order Total: {formatCurrency(totalPrice)}</h3>
               </TotalPrice>
             </InnerRow>
-            <BuyBtn type="submit">Buy Now</BuyBtn>
+            <BuyBtn
+              disabled={processing}
+              className={processing && "processing"}
+            >
+              {processing ? "processing" : "Buy Now"}
+            </BuyBtn>
           </CreditCard>
         </Row>
       </DetailsBox>

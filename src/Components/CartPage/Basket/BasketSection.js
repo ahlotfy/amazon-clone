@@ -65,7 +65,7 @@ const BasketSection = () => {
 
     return (
       <ShoppingBox key={id}>
-        <Link className="item-page" target="_blank" to={`/item_page#${id}`}>
+        <Link className="item_page" target="_blank" to={`/item_page#${id}`}>
           <ImgBox className="items-img">
             <img src={img} alt="" />
           </ImgBox>
@@ -73,7 +73,7 @@ const BasketSection = () => {
         <CaptionBox className="items-caption">
           <Info>
             {/* 1-Name */}
-            <Link className="item-page" target="_blank" to={`/item_page#${id}`}>
+            <Link className="item_page" target="_blank" to={`/item_page#${id}`}>
               <p>{name}</p>
             </Link>
             {/* 2-Price */}

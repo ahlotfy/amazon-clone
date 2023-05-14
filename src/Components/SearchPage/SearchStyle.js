@@ -120,7 +120,7 @@ const Discount = styled.span`
     padding: 3px;
   }
 `;
-const ProductImg = styled.div`
+const ProductImg = styled.a`
   background-color: #f6f5f5;
   display: flex;
   justify-content: center;

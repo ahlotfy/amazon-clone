@@ -1,8 +1,9 @@
 import styled from "@emotion/styled";
 
-const Cart = styled.div`
+const Container = styled.div`
   padding: 20px;
   width: 100%;
+  min-height: calc(53vh + 2px);
   display: grid;
   grid-template-columns: 1000px 300px;
   @media (max-width: 1400px) {
@@ -196,15 +197,8 @@ const ButtonCheckOut = styled(SignInButton)`
   }
 `;
 
-const ViewedBox = styled.div`
-  min-width: 200px;
-  background-color: #fff;
-  padding: 10px;
-  border-radius: 5px;
-`;
-
 export {
-  Cart,
+  Container,
   ShoppingLeft,
   ImgBox,
   CaptionBox,
@@ -216,5 +210,4 @@ export {
   ShoppingRight,
   TotalCart,
   ButtonCheckOut,
-  ViewedBox,
 };

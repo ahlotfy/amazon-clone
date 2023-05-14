@@ -3,6 +3,8 @@ import React, { useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 // Back End
 import { auth } from "./firebase";
+import { loadStripe } from "@stripe/stripe-js";
+import { Elements } from "@stripe/react-stripe-js";
 // Protect Auth
 import RequireUser from "./Setting/RequireUser";
 import NotRequireUser from "./Setting/NotRequireUser";
@@ -22,10 +24,13 @@ import CartSection from "./Components/CartPage/CartSection";
 import PaymentSection from "./Components/PaymentPage/PaymentSection";
 import ItemPageSection from "./Components/ItemPage/ItemPageSection";
 import SearchSection from "./Components/SearchPage/SearchSection";
+import OrdersSection from "./Components/Orderspage/OrdersSection";
 
+const stripePromise = loadStripe(
+  `pk_test_51N0a10DirYAZgJ6ob0dJyyNbJTW9W2il4L7UJVrhYngQNQRUTknYUIYiQmZzlygq44rTYHK0IvInIiaykkYwaECm002eFVjKjV`
+);
 const App = () => {
   const { dispatch } = useAuth();
-
   useEffect(() => {
     auth.onAuthStateChanged((authUser) => {
       if (authUser) {
@@ -124,13 +129,30 @@ const App = () => {
             <RequireUser>
               <BlurProvider>
                 <HeaderSection />
-                <PaymentSection />
+                <Elements stripe={stripePromise}>
+                  <PaymentSection />
+                </Elements>
               </BlurProvider>
               <FooterSection />
             </RequireUser>
           }
         />
         {/* End Payment Page */}
+
+        {/* Start Order Page */}
+        <Route
+          path="/orders"
+          element={
+            <RequireUser>
+              <BlurProvider>
+                <HeaderSection />
+                <OrdersSection />
+              </BlurProvider>
+              <FooterSection />
+            </RequireUser>
+          }
+        />
+        {/* End Order Page */}
 
         {/* Start Item Page */}
         <Route

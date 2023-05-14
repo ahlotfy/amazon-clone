@@ -1,13 +1,13 @@
 // Basic
 import React, { useRef } from "react";
 // Images
-import off1 from "../../images/Slider/off1.png";
-import off2 from "../../images/Slider/off2.png";
-import off3 from "../../images/Slider/off3.png";
-import off4 from "../../images/Slider/off4.png";
-import off5 from "../../images/Slider/off5.png";
+import off1 from "../../../images/Slider/off1.png";
+import off2 from "../../../images/Slider/off2.png";
+import off3 from "../../../images/Slider/off3.png";
+import off4 from "../../../images/Slider/off4.png";
+import off5 from "../../../images/Slider/off5.png";
 // Style
-import { Slide, Img, Navigate } from "./HomeStyle";
+import { Slide, Img, Navigate } from "./SlidesStyle";
 
 const SlidesFun = () => {
   const slideRef = useRef();

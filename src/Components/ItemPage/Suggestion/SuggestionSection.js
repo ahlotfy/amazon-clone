@@ -35,7 +35,7 @@ const SuggestionSection = ({ product }) => {
           return (
             <Item key={id}>
               <Link
-                className="item-page"
+                className="item_page"
                 target="_blank"
                 to={`/item_page#${id}`}
               >
@@ -45,7 +45,7 @@ const SuggestionSection = ({ product }) => {
               </Link>
               <BoxCaption>
                 <Link
-                  className="item-page"
+                  className="item_page"
                   target="_blank"
                   to={`/item_page#${id}`}
                 >

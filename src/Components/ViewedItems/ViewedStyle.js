@@ -1,11 +1,21 @@
 import styled from "@emotion/styled";
 
 const Products = styled.div`
+  min-width: 200px;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  &.row {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: space-evenly;
+  }
   h3 {
     font-size: 20px;
     text-align: center;
   }
-  a.item-page {
+  a.item_page {
     display: flex;
     color: black;
     :hover {
@@ -13,10 +23,14 @@ const Products = styled.div`
     }
   }
 `;
+const Container = styled.div`
+  &.row {
+    display: flex;
+  }
+`;
 const ProductBox = styled.div`
   display: flex;
   padding-top: 10px;
-  padding-bottom: 10px;
 `;
 const ProductImg = styled.div`
   padding: 20px;
@@ -31,14 +45,17 @@ const ProductCaption = styled.div`
     font-size: 14px;
   }
 `;
-const Stars = styled.a`
-  padding-top: 5px;
-  display: block;
+const Ratings = styled.div`
+  margin-top: 10px;
+  display: flex;
+  margin-bottom: 4px;
+  align-items: center;
+  font-size: 14px;
+`;
+const Stars = styled.div`
   cursor: pointer;
-  padding-bottom: 10px;
   i {
     color: #e67a00;
-    font-size: 16px;
     ::after {
       content: "";
       width: 100%;
@@ -46,12 +63,11 @@ const Stars = styled.a`
       background-color: red;
     }
   }
-  span {
-    padding: 0 10px;
-  }
-  :hover {
-    color: darkred;
-  }
+`;
+const Review = styled.div`
+  padding: 0 10px;
+  color: var(--linkColor);
+  cursor: pointer;
 `;
 const Price = styled.div`
   font-size: 16px;
@@ -80,10 +96,13 @@ const Button = styled.button`
 
 export {
   Products,
+  Container,
   ProductBox,
   ProductImg,
   ProductCaption,
+  Ratings,
   Stars,
+  Review,
   Price,
   Button,
 };

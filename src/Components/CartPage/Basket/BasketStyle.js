@@ -21,7 +21,7 @@ const ShoppingBox = styled.div`
     justify-content: center;
     align-items: center;
   }
-  a.item-page {
+  a.item_page {
     color: black;
     :hover {
       color: #c7511f;
@@ -171,6 +171,9 @@ const ListQuantity = styled.ul`
     z-index: 20;
     position: relative;
     background-color: transparent;
+    :hover {
+      background-color: #b9b7b74a;
+    }
   }
 `;
 

@@ -4,8 +4,7 @@ const Items = styled.div`
   width: 100%;
   gap: 10px;
   grid-template-columns: repeat(3, 1fr);
-
-  @media (max-width: 992px) {
+  @media (max-width: 1200px) {
     grid-template-columns: repeat(2, 1fr);
   }
   @media (max-width: 768px) {
@@ -77,24 +76,9 @@ const Review = styled.div`
   color: var(--linkColor);
   cursor: pointer;
 `;
-const InputQuantity = styled.input`
-  display: block;
-  text-align: center;
-  height: 30px !important;
-  max-width: 80px;
+const Quantity = styled.div`
   margin-bottom: 10px;
-  background: var(--fourthColor);
-  box-shadow: 0px 0px 5px -2px;
   margin-top: 10px;
-  background: var(--lightColor);
-  text-indent: 0px !important;
-  opacity: 0.8;
-  cursor: default;
-  & option {
-    :hover {
-      background-color: var(--lightColor);
-    }
-  }
 `;
 
 const Price = styled.div`
@@ -133,7 +117,7 @@ export {
   ProductBox,
   ProductImg,
   ProductCaption,
-  InputQuantity,
+  Quantity,
   Ratings,
   Stars,
   Review,

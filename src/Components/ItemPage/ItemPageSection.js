@@ -4,7 +4,7 @@ import AuthExternal from "../Auth/AuthExternal/AuthExternal";
 import SuggestionSection from "./Suggestion/SuggestionSection";
 import PartOneSection from "./PartOne/PartOneSection";
 import PartTwoSection from "./PartTwo/PartTwoSection";
-import { useLocation, useNavigate } from "react-router-dom";
+import { json, useLocation, useNavigate } from "react-router-dom";
 import PRODUCTS_DATA from "../../Data/products.json";
 
 const ItemPageSection = () => {
@@ -15,6 +15,36 @@ const ItemPageSection = () => {
   const ids = PRODUCTS_DATA.map((product) => product.id);
 
   useEffect(() => {
+    const findItem = JSON.parse(window.localStorage.getItem("viewed"))?.find(
+      (item) => item.id === +location.hash.replace("#", "")
+    );
+
+    if (window.localStorage.getItem("viewed")) {
+      if (!findItem) {
+        window.localStorage.setItem(
+          "viewed",
+          JSON.stringify([
+            ...JSON.parse(window.localStorage.getItem("viewed")),
+            PRODUCTS_DATA.find(
+              (item) => item.id === +location.hash.replace("#", "")
+            ),
+          ])
+        );
+      }
+      if (JSON.parse(window.localStorage.getItem("viewed"))?.length >= 5) {
+        window.localStorage.setItem(
+          "viewed",
+          JSON.stringify([
+            JSON.parse(window.localStorage.getItem("viewed"))[1],
+            JSON.parse(window.localStorage.getItem("viewed"))[2],
+            JSON.parse(window.localStorage.getItem("viewed"))[3],
+          ])
+        );
+      }
+    } else {
+      window.localStorage.setItem("viewed", JSON.stringify([]));
+    }
+    console.log();
     if (ids.includes(+location.hash.replace("#", ""))) {
       setProduct(
         PRODUCTS_DATA.filter(
@@ -29,6 +59,7 @@ const ItemPageSection = () => {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
   return (
     <>
       <Container
