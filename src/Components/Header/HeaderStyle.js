@@ -195,7 +195,7 @@ const OptionLineTwo = styled.div`
     margin-top: 5px;
   }
   @media (max-width: 400px) {
-    margin-top: 30px;
+    margin-top: 10px;
   }
 `;
 
