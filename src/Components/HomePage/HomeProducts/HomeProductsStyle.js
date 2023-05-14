@@ -70,16 +70,18 @@ const ImgGroup = styled.div`
 `;
 
 const ImgContent = styled.div`
-  img {
+  a {
+    font-size: 12px;
+    font-weight: 500;
+  }
+  img,
+  .loading_img {
     cursor: pointer;
     width: 100%;
     height: 100%;
     min-width: 145px;
     object-fit: cover;
-  }
-  a {
-    font-size: 12px;
-    font-weight: 500;
+    background-color: #ddd;
   }
 `;
 

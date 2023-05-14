@@ -14,7 +14,7 @@ import {
   About,
 } from "./PartOneStyle";
 
-// import ReactImageMagnify from "react-image-magnify";
+import ReactImageMagnify from "react-image-magnify";
 import { Price, Return } from "../ItemPageStyle";
 import formatCurrency from "../../../Setting/formatCurrency";
 
@@ -38,7 +38,7 @@ const PartOneSection = ({ product }) => {
       {/* 1- Img */}
       <BoxImg>
         <div className="wrap-img">
-          {/* <ReactImageMagnify
+          <ReactImageMagnify
             className="img-product"
             imageClassName="small-img"
             enlargedImageContainerClassName="large-img"
@@ -56,7 +56,7 @@ const PartOneSection = ({ product }) => {
                 height: 1800,
               },
             }}
-          /> */}
+          />
         </div>
       </BoxImg>
 

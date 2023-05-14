@@ -36,7 +36,11 @@ const HomeProductsSection = () => {
                     <div className="box_content_group" key={id}>
                       <ImgContent>
                         <a href={`/search#${type}`}>
-                          <img src={img} alt={name} />
+                          {img ? (
+                            <img src={img} alt={name} loading="lazy" />
+                          ) : (
+                            <div className="loading_img" />
+                          )}
                         </a>
                       </ImgContent>
                       <a href={`/search#${type}`}>{name}</a>
