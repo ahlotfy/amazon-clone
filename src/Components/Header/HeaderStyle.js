@@ -167,58 +167,56 @@ const HeaderOptions = styled.div`
   padding-bottom: 10px;
   padding-left: 9px;
   padding-right: 9px;
-
-  i {
-    font-size: 20px;
-  }
-
   :hover {
     border-color: #fff;
   }
-
+  i {
+    font-size: 20px;
+  }
   :active {
     border-color: var(--mainColor);
   }
-
-  & .optionLineOne {
-    font-size: 12px;
-    line-height: 14px;
-    height: 14px;
-    font-weight: 400;
-    margin-top: 9px;
+`;
+const OptionLineOne = styled.div`
+  font-size: 12px;
+  line-height: 14px;
+  height: 14px;
+  font-weight: 400;
+  margin-top: 9px;
+  span {
+    word-break: break-word;
   }
+`;
+const OptionLineTwo = styled.div`
+  font-size: 14px;
+  line-height: 15px;
+  font-weight: bold;
+  @media (max-width: 768px) {
+    margin-top: 5px;
+  }
+  @media (max-width: 400px) {
+    margin-top: 30px;
+  }
+`;
 
-  & .optionLineTwo {
-    font-size: 14px;
-    line-height: 15px;
+const Basket = styled(HeaderOptions)`
+  width: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  i {
+    font-size: 22px;
+    ::before {
+      content: '"\f07a"';
+      font-weight: 900;
+      font-family: "Font Awesome 6 Free";
+    }
+  }
+  span {
+    font-size: 16px;
     font-weight: bold;
-    @media (max-width: 768px) {
-      margin-top: 5px;
-    }
-    @media (max-width: 400px) {
-      margin-top: 15px;
-    }
-  }
-  
-  &.basket {
-    width: 50px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    i {
-      font-size: 22px;
-      ::before {
-        content: '"\f07a"';
-        font-weight: 900;
-        font-family: "Font Awesome 6 Free";
-      }
-    }
-    span {
-      font-size: 16px;
-      font-weight: bold;
-      color: var(--mainColor);
-    }
+    color: var(--mainColor);
   }
 `;
 export {
@@ -231,4 +229,7 @@ export {
   WrapInput,
   HeaderActions,
   HeaderOptions,
+  OptionLineOne,
+  OptionLineTwo,
+  Basket,
 };

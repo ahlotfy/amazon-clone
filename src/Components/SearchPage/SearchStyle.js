@@ -86,30 +86,6 @@ const Price = styled.div`
     }
   }
 `;
-const Ratings = styled.div`
-  margin-top: 10px;
-  display: flex;
-  margin-bottom: 4px;
-  align-items: center;
-  font-size: 14px;
-`;
-const Stars = styled.div`
-  cursor: pointer;
-  i {
-    color: #e67a00;
-    ::after {
-      content: "";
-      width: 100%;
-      height: 100%;
-      background-color: red;
-    }
-  }
-`;
-const Review = styled.div`
-  padding: 0 10px;
-  color: var(--linkColor);
-  cursor: pointer;
-`;
 const Discount = styled.span`
   display: block;
   padding-top: 5px;
@@ -147,9 +123,6 @@ export {
   ProductsSection,
   ProductBox,
   ProductCaption,
-  Ratings,
-  Stars,
-  Review,
   Price,
   Discount,
   ProductImg,

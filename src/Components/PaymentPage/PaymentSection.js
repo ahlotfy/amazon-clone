@@ -4,10 +4,14 @@ import { Link, useNavigate } from "react-router-dom";
 import { doc, setDoc } from "firebase/firestore";
 import { dataBase } from "../../firebase";
 import shortid from "shortid";
+// Back End
+import { CardElement } from "@stripe/react-stripe-js";
 // Component
 import ItemsSection from "./ItemInBasket/ItemsSection";
 // Context API
 import { useAuth } from "../../Context/GlobalState";
+// Format Currency
+import formatCurrency from "../../Setting/formatCurrency";
 // Style
 import {
   Payment,
@@ -20,9 +24,6 @@ import {
   TotalPrice,
   BuyBtn,
 } from "./PaymentStyle";
-// Format Currency
-import formatCurrency from "../../Setting/formatCurrency";
-import { CardElement } from "@stripe/react-stripe-js";
 const idsOrders = shortid.generate();
 const PaymentSection = () => {
   const { lengthItems, totalPrice, user, dispatch, basket } = useAuth();
@@ -43,7 +44,6 @@ const PaymentSection = () => {
       });
       navigate("/orders", { replace: true });
     }, 2000);
-    console.log("hello");
   };
 
   return (

@@ -31,20 +31,22 @@ const ItemPageSection = () => {
           ])
         );
       }
-      if (JSON.parse(window.localStorage.getItem("viewed"))?.length >= 5) {
+      if (JSON.parse(window.localStorage.getItem("viewed"))?.length >= 7) {
         window.localStorage.setItem(
           "viewed",
           JSON.stringify([
             JSON.parse(window.localStorage.getItem("viewed"))[1],
             JSON.parse(window.localStorage.getItem("viewed"))[2],
             JSON.parse(window.localStorage.getItem("viewed"))[3],
+            JSON.parse(window.localStorage.getItem("viewed"))[4],
+            JSON.parse(window.localStorage.getItem("viewed"))[5],
           ])
         );
       }
     } else {
       window.localStorage.setItem("viewed", JSON.stringify([]));
     }
-    console.log();
+
     if (ids.includes(+location.hash.replace("#", ""))) {
       setProduct(
         PRODUCTS_DATA.filter(

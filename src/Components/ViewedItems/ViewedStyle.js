@@ -1,19 +1,23 @@
 import styled from "@emotion/styled";
 
+const Container = styled.div`
+  h3 {
+    margin-bottom: 10px;
+  }
+`;
 const Products = styled.div`
-  min-width: 200px;
   background-color: #fff;
   padding: 10px;
   border-radius: 5px;
   &.row {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    justify-content: space-evenly;
-  }
-  h3 {
-    font-size: 20px;
-    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    @media (max-width: 992px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media (max-width: 768px) {
+      grid-template-columns: repeat(1, 1fr);
+    }
   }
   a.item_page {
     display: flex;
@@ -23,14 +27,15 @@ const Products = styled.div`
     }
   }
 `;
-const Container = styled.div`
-  &.row {
-    display: flex;
-  }
-`;
 const ProductBox = styled.div`
   display: flex;
   padding-top: 10px;
+  &.row {
+    @media (max-width: 768px) {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
 `;
 const ProductImg = styled.div`
   padding: 20px;
@@ -40,34 +45,11 @@ const ProductImg = styled.div`
   }
 `;
 const ProductCaption = styled.div`
+  max-width: 300px;
   p {
     font-weight: 500;
     font-size: 14px;
   }
-`;
-const Ratings = styled.div`
-  margin-top: 10px;
-  display: flex;
-  margin-bottom: 4px;
-  align-items: center;
-  font-size: 14px;
-`;
-const Stars = styled.div`
-  cursor: pointer;
-  i {
-    color: #e67a00;
-    ::after {
-      content: "";
-      width: 100%;
-      height: 100%;
-      background-color: red;
-    }
-  }
-`;
-const Review = styled.div`
-  padding: 0 10px;
-  color: var(--linkColor);
-  cursor: pointer;
 `;
 const Price = styled.div`
   font-size: 16px;
@@ -100,9 +82,6 @@ export {
   ProductBox,
   ProductImg,
   ProductCaption,
-  Ratings,
-  Stars,
-  Review,
   Price,
   Button,
 };

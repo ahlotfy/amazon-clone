@@ -36,30 +36,6 @@ const BoxCaption = styled.div`
     }
   }
 `;
-const Ratings = styled.div`
-  margin-top: 10px;
-  display: flex;
-  margin-bottom: 4px;
-  align-items: center;
-  font-size: 14px;
-`;
-const Stars = styled.div`
-  cursor: pointer;
-  i {
-    color: #e67a00;
-    ::after {
-      content: "";
-      width: 100%;
-      height: 100%;
-      background-color: red;
-    }
-  }
-`;
-const Review = styled.div`
-  padding: 0 10px;
-  color: var(--linkColor);
-  cursor: pointer;
-`;
 
 const BoxImg = styled.div`
   width: 100%;
@@ -71,13 +47,4 @@ const BoxImg = styled.div`
     object-fit: contain;
   }
 `;
-export {
-  Suggestion,
-  ProductBox,
-  Item,
-  BoxCaption,
-  Ratings,
-  Review,
-  Stars,
-  BoxImg,
-};
+export { Suggestion, ProductBox, Item, BoxCaption, BoxImg };

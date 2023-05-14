@@ -17,6 +17,9 @@ import {
   SearchIcon,
   DropSearch,
   HeaderOptions,
+  OptionLineOne,
+  OptionLineTwo,
+  Basket,
   HeaderActions,
 } from "./HeaderStyle";
 import PRODUCTS_DATA from "../../Data/products.json";
@@ -177,23 +180,23 @@ const HeaderSection = () => {
       <HeaderActions>
         <Link to={!user && "/signin"}>
           <HeaderOptions className="account" onClick={handleAuth}>
-            <div className="optionLineOne">
+            <OptionLineOne>
               <span>Hello, {user ? user.email : "Guest"}</span>
-            </div>
-            <div className="optionLineTwo">{user ? "Sign Out" : "Sign In"}</div>
+            </OptionLineOne>
+            <OptionLineTwo>{user ? "Sign Out" : "Sign In"}</OptionLineTwo>
           </HeaderOptions>
         </Link>
         <Link to="/orders">
           <HeaderOptions>
-            <div className="optionLineOne">Returns</div>
-            <div className="optionLineTwo">& Orders</div>
+            <OptionLineOne>Returns</OptionLineOne>
+            <OptionLineTwo>& Orders</OptionLineTwo>
           </HeaderOptions>
         </Link>
         <Link to="/cart">
-          <HeaderOptions className="basket">
+          <Basket>
             <span>{lengthItems ? lengthItems : 0}</span>
             <i className="fa-solid fa-cart-shopping" />
-          </HeaderOptions>
+          </Basket>
         </Link>
       </HeaderActions>
       {/* End Right Section */}

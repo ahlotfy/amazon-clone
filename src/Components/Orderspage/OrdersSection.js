@@ -1,7 +1,20 @@
+// Basic
 import React, { useEffect, useState } from "react";
+import moment from "moment/moment";
 import { Link } from "react-router-dom";
+// Back End
+import { collection, onSnapshot, orderBy, query } from "firebase/firestore";
+import { dataBase } from "../../firebase";
+// Context API
 import { useAuth } from "../../Context/GlobalState";
+// Components
+import ViewedSection from "../ViewedItems/ViewedSection";
+import RatingsSection from "../../Subscriptions/Ratings";
+// Format Currency
+import formatCurrency from "../../Setting/formatCurrency";
+// Image
 import EmptyImg from "../../images/empty-img.png";
+// Style
 import {
   Heading,
   Container,
@@ -11,25 +24,17 @@ import {
   Orders,
   ImgBox,
   CaptionBox,
-  Ratings,
-  Stars,
-  Review,
   Quantity,
   Price,
   EmptyCart,
   EmptyImgBox,
   EmptyCaptionBox,
 } from "./OrderStyle";
-import { collection, onSnapshot, orderBy, query } from "firebase/firestore";
-import { dataBase } from "../../firebase";
-import formatCurrency from "../../Setting/formatCurrency";
-import moment from "moment/moment";
-import ViewedSection from "../ViewedItems/ViewedSection";
 
 const OrdersSection = () => {
   const [itemsInOrders, setItemsInOrders] = useState([]);
-
   const { user } = useAuth();
+
   useEffect(() => {
     if (user) {
       const collRef = collection(dataBase, "users", user?.uid, "orders");
@@ -46,6 +51,7 @@ const OrdersSection = () => {
       setItemsInOrders([]);
     }
   }, [user]);
+
   const CollectionsComp = ({ order }) => {
     const [dropActive, setDropActive] = useState(false);
     return (
@@ -69,85 +75,27 @@ const OrdersSection = () => {
             const { id, name, img, stars, review, price, quantity } = item;
             return (
               <Orders key={id}>
+                {/* 1- Img */}
                 <ImgBox>
-                  <Link
-                    className="item_page"
-                    target="_blank"
-                    to={`/item_page#${id}`}
-                  >
+                  <Link className="item_page" to={`/item_page#${id}`}>
                     <img src={img} alt={name} />
                   </Link>
                 </ImgBox>
                 <CaptionBox>
                   {/* 2- Name */}
-                  <Link
-                    className="item_page"
-                    target="_blank"
-                    to={`/item_page#${id}`}
-                  >
+                  <Link className="item_page" to={`/item_page#${id}`}>
                     <p>{name}</p>
                   </Link>
-                  <Ratings>
-                    {/* 3- Stars */}
-                    <Stars>
-                      {stars === 1 ? (
-                        <>
-                          <i className="fa-solid fa-star" />
-                          <i className="fa-regular fa-star" />
-                          <i className="fa-regular fa-star" />
-                          <i className="fa-regular fa-star" />
-                          <i className="fa-regular fa-star" />
-                        </>
-                      ) : stars === 2 ? (
-                        <>
-                          <i className="fa-solid fa-star" />
-                          <i className="fa-solid fa-star" />
-                          <i className="fa-regular fa-star" />
-                          <i className="fa-regular fa-star" />
-                          <i className="fa-regular fa-star" />
-                        </>
-                      ) : stars === 3 ? (
-                        <>
-                          <i className="fa-solid fa-star" />
-                          <i className="fa-solid fa-star" />
-                          <i className="fa-solid fa-star" />
-                          <i className="fa-regular fa-star" />
-                          <i className="fa-regular fa-star" />
-                        </>
-                      ) : stars === 4 ? (
-                        <>
-                          <i className="fa-solid fa-star" />
-                          <i className="fa-solid fa-star" />
-                          <i className="fa-solid fa-star" />
-                          <i className="fa-solid fa-star" />
-                          <i className="fa-regular fa-star" />
-                        </>
-                      ) : stars === 5 ? (
-                        <>
-                          <i className="fa-solid fa-star" />
-                          <i className="fa-solid fa-star" />
-                          <i className="fa-solid fa-star" />
-                          <i className="fa-solid fa-star" />
-                          <i className="fa-solid fa-star" />
-                        </>
-                      ) : (
-                        <>
-                          <i className="fa-regular fa-star" />
-                          <i className="fa-regular fa-star" />
-                          <i className="fa-regular fa-star" />
-                          <i className="fa-regular fa-star" />
-                          <i className="fa-regular fa-star" />
-                        </>
-                      )}
-                    </Stars>
-                    {/* 4- Review */}
-                    <Review>{review}</Review>
-                  </Ratings>
-                  {/* 5- Product Quantity */}
+
+                  {/*3- Ratings */}
+                  <RatingsSection stars={stars} review={review} />
+
+                  {/* 4- Quantity */}
                   <Quantity>
                     <h5>Quantity : {quantity}</h5>
                   </Quantity>
-                  {/* 6- Price */}
+                  {/* 5- Price */}
+
                   <Price>{formatCurrency(price * +quantity)}</Price>
                 </CaptionBox>
               </Orders>

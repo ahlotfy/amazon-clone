@@ -55,7 +55,7 @@ const BasketSection = () => {
     const [isUpdateOpen, setIsUpdateOpen] = useState(false);
     const [inputValue, setInputValue] = useState(quantity ? quantity : 1);
     const [isFocusInput, setIsFocusInput] = useState(false);
-    // const [quantityState, setQuantity] = useState(1);
+
     // Show Available Quantity
     var i = 1;
     var quantityOption = [];
@@ -65,18 +65,17 @@ const BasketSection = () => {
 
     return (
       <ShoppingBox key={id}>
-        <Link className="item_page" target="_blank" to={`/item_page#${id}`}>
+        <Link className="item_page" to={`/item_page#${id}`}>
           <ImgBox className="items-img">
             <img src={img} alt="" />
           </ImgBox>
         </Link>
+
         <CaptionBox className="items-caption">
           <Info>
-            {/* 1-Name */}
-            <Link className="item_page" target="_blank" to={`/item_page#${id}`}>
+            <Link className="item_page" to={`/item_page#${id}`}>
               <p>{name}</p>
             </Link>
-            {/* 2-Price */}
             <h3 className="price">{formatCurrency(price)}</h3>
           </Info>
 
@@ -109,6 +108,7 @@ const BasketSection = () => {
                     <i className="fa-solid fa-angle-down" />
                   </SelectQuantity>
                 </div>
+
                 {isQuantityListOpen && (
                   <OptionsQuantity className="select" htmlFor={`opq${id}`}>
                     <li
@@ -135,6 +135,7 @@ const BasketSection = () => {
                           </li>
                         )
                     )}
+
                     {availableQuantity >= 10 && (
                       <li
                         className="write-quantity"
@@ -150,6 +151,7 @@ const BasketSection = () => {
                 )}
               </ListQuantity>
             )}
+
             {isHighQuantity && (
               <div className="high_quantity">
                 <InputQuantity
@@ -181,6 +183,7 @@ const BasketSection = () => {
                     setIsFocusInput(false);
                   }}
                 />
+
                 {isUpdateOpen && (
                   <UpdateQuantity
                     onClick={() => {

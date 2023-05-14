@@ -10,23 +10,30 @@ const ButtonBackTop = styled.button`
   :hover {
     background-color: #485769;
   }
+  &.disabled {
+    opacity: 0.8;
+    cursor: default;
+  }
 `;
 
 const Footer = styled.div`
+  background-color: #232f3e;
+`;
+
+const Row = styled.div`
   width: 100%;
   color: white;
-  background-color: #232f3e;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   @media (max-width: 768px) {
     grid-template-columns: repeat(2, 1fr);
   }
-  @media (max-width: 400px) {
+  @media (max-width: 576px) {
     grid-template-columns: repeat(1, 1fr);
     text-align: center;
   }
+  max-width: 1200px;
 `;
-
 const Col = styled.div`
   width: 100%;
   padding: 20px;
@@ -79,4 +86,4 @@ const CopyRight = styled.div`
   }
 `;
 
-export { ButtonBackTop, Footer, Col, Heading, Option, CopyRight };
+export { ButtonBackTop, Footer, Row, Col, Heading, Option, CopyRight };

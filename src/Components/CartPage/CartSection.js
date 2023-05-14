@@ -9,6 +9,8 @@ import EmptyImg from "../../images/empty-img.png";
 import ViewedSection from "../ViewedItems/ViewedSection";
 // Context API
 import { useAuth } from "../../Context/GlobalState";
+// Component
+import BasketSection from "./Basket/BasketSection";
 // Style
 import {
   Container,
@@ -24,8 +26,6 @@ import {
   TotalCart,
   ButtonCheckOut,
 } from "./CartStyle";
-// Component
-import BasketSection from "./Basket/BasketSection";
 
 const CartSection = () => {
   const { basket, lengthItems, totalPrice, user } = useAuth();
@@ -35,12 +35,16 @@ const CartSection = () => {
       {/* Start Left Section */}
       <ShoppingLeft>
         {lengthItems > 0 ? (
+          // 1- BasketSection
           <BasketSection />
         ) : (
+          // 2- EmptyCart
           <EmptyCart>
+            {/* Img */}
             <ImgBox className="empty-img">
               <img src={EmptyImg} alt="Img" />
             </ImgBox>
+            {/* Caption */}
             <CaptionBox className="empty-caption">
               <h2>Your Amazon Cart is empty</h2>
               <span className="link">Shop today's deals</span>
@@ -72,6 +76,7 @@ const CartSection = () => {
         </p>
       </ShoppingLeft>
       {/* End Left Section */}
+
       {/* Start Right Section */}
       <ShoppingRight>
         {basket?.length > 0 ? (

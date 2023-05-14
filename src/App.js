@@ -26,10 +26,10 @@ import ItemPageSection from "./Components/ItemPage/ItemPageSection";
 import SearchSection from "./Components/SearchPage/SearchSection";
 import OrdersSection from "./Components/Orderspage/OrdersSection";
 
-const stripePromise = loadStripe(
-  `pk_test_51N0a10DirYAZgJ6ob0dJyyNbJTW9W2il4L7UJVrhYngQNQRUTknYUIYiQmZzlygq44rTYHK0IvInIiaykkYwaECm002eFVjKjV`
-);
 const App = () => {
+  const stripePromise = loadStripe(
+    `pk_test_51N0a10DirYAZgJ6ob0dJyyNbJTW9W2il4L7UJVrhYngQNQRUTknYUIYiQmZzlygq44rTYHK0IvInIiaykkYwaECm002eFVjKjV`
+  );
   const { dispatch } = useAuth();
   useEffect(() => {
     auth.onAuthStateChanged((authUser) => {

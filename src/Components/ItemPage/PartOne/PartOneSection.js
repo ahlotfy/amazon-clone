@@ -4,9 +4,6 @@ import {
   BoxImg,
   Caption,
   Top,
-  Ratings,
-  Stars,
-  Review,
   Mid,
   Features,
   Bottom,
@@ -16,10 +13,11 @@ import {
 
 import { Price, Return } from "../ItemPageStyle";
 import formatCurrency from "../../../Setting/formatCurrency";
+import RatingsSection from "../../../Subscriptions/Ratings";
 
 const PartOneSection = ({ product }) => {
   const [
-    { name, img, price, discount, review, save, stars, brand, color, material },
+    { name, img, price, discount, review, stars, save, brand, color, material },
   ] = product;
 
   return (
@@ -35,65 +33,9 @@ const PartOneSection = ({ product }) => {
         <Top>
           {/* 2- Name  */}
           <h2>{name}</h2>
-          <Ratings>
-            {/* 3- Stars */}
-            <Stars>
-              {stars === 1 ? (
-                <>
-                  <i className="fa-solid fa-star" />
-                  <i className="fa-regular fa-star" />
-                  <i className="fa-regular fa-star" />
-                  <i className="fa-regular fa-star" />
-                  <i className="fa-regular fa-star" />
-                </>
-              ) : stars === 2 ? (
-                <>
-                  <i className="fa-solid fa-star" />
-                  <i className="fa-solid fa-star" />
-                  <i className="fa-regular fa-star" />
-                  <i className="fa-regular fa-star" />
-                  <i className="fa-regular fa-star" />
-                </>
-              ) : stars === 3 ? (
-                <>
-                  <i className="fa-solid fa-star" />
-                  <i className="fa-solid fa-star" />
-                  <i className="fa-solid fa-star" />
-                  <i className="fa-regular fa-star" />
-                  <i className="fa-regular fa-star" />
-                </>
-              ) : stars === 4 ? (
-                <>
-                  <i className="fa-solid fa-star" />
-                  <i className="fa-solid fa-star" />
-                  <i className="fa-solid fa-star" />
-                  <i className="fa-solid fa-star" />
-                  <i className="fa-regular fa-star" />
-                </>
-              ) : stars === 5 ? (
-                <>
-                  <i className="fa-solid fa-star" />
-                  <i className="fa-solid fa-star" />
-                  <i className="fa-solid fa-star" />
-                  <i className="fa-solid fa-star" />
-                  <i className="fa-solid fa-star" />
-                </>
-              ) : (
-                <>
-                  <i className="fa-regular fa-star" />
-                  <i className="fa-regular fa-star" />
-                  <i className="fa-regular fa-star" />
-                  <i className="fa-regular fa-star" />
-                  <i className="fa-regular fa-star" />
-                </>
-              )}
-            </Stars>
-            {/* 4- Review */}
-            <Review>{review}</Review>
-          </Ratings>
+          <RatingsSection stars={stars} review={review} />
         </Top>
         {/* End Top */}
-
         {/* Start Mid */}
         <Mid>
           <Price>

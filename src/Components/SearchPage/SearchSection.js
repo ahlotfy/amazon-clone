@@ -12,14 +12,12 @@ import {
   ProductsSection,
   ProductBox,
   ProductCaption,
-  Ratings,
-  Stars,
-  Review,
   Price,
   Discount,
   ProductImg,
   Img,
 } from "./SearchStyle";
+import RatingsSection from "../../Subscriptions/Ratings";
 
 const SearchSection = () => {
   const location = useLocation();
@@ -59,63 +57,11 @@ const SearchSection = () => {
               <ProductCaption>
                 {/* 2- Name */}
                 <Link to={`/item_page#${id}`}>{name}</Link>
-                <Ratings>
-                  {/* 3- Stars */}
-                  <Stars>
-                    {stars === 1 ? (
-                      <>
-                        <i className="fa-solid fa-star" />
-                        <i className="fa-regular fa-star" />
-                        <i className="fa-regular fa-star" />
-                        <i className="fa-regular fa-star" />
-                        <i className="fa-regular fa-star" />
-                      </>
-                    ) : stars === 2 ? (
-                      <>
-                        <i className="fa-solid fa-star" />
-                        <i className="fa-solid fa-star" />
-                        <i className="fa-regular fa-star" />
-                        <i className="fa-regular fa-star" />
-                        <i className="fa-regular fa-star" />
-                      </>
-                    ) : stars === 3 ? (
-                      <>
-                        <i className="fa-solid fa-star" />
-                        <i className="fa-solid fa-star" />
-                        <i className="fa-solid fa-star" />
-                        <i className="fa-regular fa-star" />
-                        <i className="fa-regular fa-star" />
-                      </>
-                    ) : stars === 4 ? (
-                      <>
-                        <i className="fa-solid fa-star" />
-                        <i className="fa-solid fa-star" />
-                        <i className="fa-solid fa-star" />
-                        <i className="fa-solid fa-star" />
-                        <i className="fa-regular fa-star" />
-                      </>
-                    ) : stars === 5 ? (
-                      <>
-                        <i className="fa-solid fa-star" />
-                        <i className="fa-solid fa-star" />
-                        <i className="fa-solid fa-star" />
-                        <i className="fa-solid fa-star" />
-                        <i className="fa-solid fa-star" />
-                      </>
-                    ) : (
-                      <>
-                        <i className="fa-regular fa-star" />
-                        <i className="fa-regular fa-star" />
-                        <i className="fa-regular fa-star" />
-                        <i className="fa-regular fa-star" />
-                        <i className="fa-regular fa-star" />
-                      </>
-                    )}
-                  </Stars>
-                  {/* 4- Review */}
-                  <Review>{review}</Review>
-                </Ratings>
-                {/* Discount */}
+
+                {/*3- Ratings */}
+                <RatingsSection stars={stars} review={review} />
+
+                {/*4- Save */}
                 {save ? (
                   <Discount>
                     <span>Save {save}</span> with coupon
@@ -123,7 +69,8 @@ const SearchSection = () => {
                 ) : (
                   ""
                 )}
-                {/* 3- Price */}
+
+                {/* 5- Price */}
                 <Price>
                   <span>{formatCurrency(price)}</span>
                   {discount ? (

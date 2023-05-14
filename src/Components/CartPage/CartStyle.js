@@ -1,7 +1,8 @@
 import styled from "@emotion/styled";
 
 const Container = styled.div`
-  padding: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   width: 100%;
   min-height: calc(53vh + 2px);
   display: grid;
@@ -38,6 +39,7 @@ const ShoppingLeft = styled.div`
   }
   .white-space + p {
     padding-top: 15px;
+    padding-bottom: 15px;
     background-color: var(--lightColor);
     margin: 0;
   }

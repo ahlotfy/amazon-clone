@@ -8,7 +8,10 @@ import GlobalProvider from "./Context/GlobalState";
 import "./Style/Main.css";
 import "./Style/fontawesome-icon/css/all.css";
 import "./Style/GlobalValues.css";
+import "./Style/normalize.css";
+// App
 const App = React.lazy(() => import("./App"));
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>

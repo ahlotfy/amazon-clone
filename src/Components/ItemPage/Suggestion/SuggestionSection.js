@@ -4,9 +4,6 @@ import {
   ProductBox,
   Item,
   BoxCaption,
-  Ratings,
-  Review,
-  Stars,
   Suggestion,
 } from "./SuggestionStyle";
 import { Price } from "../ItemPageStyle";
@@ -14,6 +11,7 @@ import { Price } from "../ItemPageStyle";
 import PRODUCTS_DATA from "../../../Data/products.json";
 import { Link, useLocation } from "react-router-dom";
 import formatCurrency from "../../../Setting/formatCurrency";
+import RatingsSection from "../../../Subscriptions/Ratings";
 
 const SuggestionSection = ({ product }) => {
   const [DesProduct] = product;
@@ -51,60 +49,7 @@ const SuggestionSection = ({ product }) => {
                 >
                   <p>{name}</p>
                 </Link>
-                <Ratings>
-                  <Stars>
-                    {stars === 1 ? (
-                      <>
-                        <i className="fa-solid fa-star" />
-                        <i className="fa-regular fa-star" />
-                        <i className="fa-regular fa-star" />
-                        <i className="fa-regular fa-star" />
-                        <i className="fa-regular fa-star" />
-                      </>
-                    ) : stars === 2 ? (
-                      <>
-                        <i className="fa-solid fa-star" />
-                        <i className="fa-solid fa-star" />
-                        <i className="fa-regular fa-star" />
-                        <i className="fa-regular fa-star" />
-                        <i className="fa-regular fa-star" />
-                      </>
-                    ) : stars === 3 ? (
-                      <>
-                        <i className="fa-solid fa-star" />
-                        <i className="fa-solid fa-star" />
-                        <i className="fa-solid fa-star" />
-                        <i className="fa-regular fa-star" />
-                        <i className="fa-regular fa-star" />
-                      </>
-                    ) : stars === 4 ? (
-                      <>
-                        <i className="fa-solid fa-star" />
-                        <i className="fa-solid fa-star" />
-                        <i className="fa-solid fa-star" />
-                        <i className="fa-solid fa-star" />
-                        <i className="fa-regular fa-star" />
-                      </>
-                    ) : stars === 5 ? (
-                      <>
-                        <i className="fa-solid fa-star" />
-                        <i className="fa-solid fa-star" />
-                        <i className="fa-solid fa-star" />
-                        <i className="fa-solid fa-star" />
-                        <i className="fa-solid fa-star" />
-                      </>
-                    ) : (
-                      <>
-                        <i className="fa-regular fa-star" />
-                        <i className="fa-regular fa-star" />
-                        <i className="fa-regular fa-star" />
-                        <i className="fa-regular fa-star" />
-                        <i className="fa-regular fa-star" />
-                      </>
-                    )}
-                  </Stars>
-                  <Review>{review}</Review>
-                </Ratings>
+                <RatingsSection stars={stars} review={review} />
                 <Price>
                   <span>{formatCurrency(price)}</span>
                 </Price>
