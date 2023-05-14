@@ -17,7 +17,9 @@ root.render(
   <React.StrictMode>
     <Router>
       <GlobalProvider>
-        <React.Suspense>
+        <React.Suspense
+          fallback={<div style={{ width: "100%", height: "100vh" }}></div>}
+        >
           <App />
         </React.Suspense>
       </GlobalProvider>
