@@ -51,7 +51,7 @@ const SuggestionSection = ({ product }) => {
                   target="_blank"
                   to={`/item_page#${id}`}
                 >
-                  <p>{name}</p>
+                  {name}
                 </Link>
                 <RatingsSection stars={stars} review={review} />
                 <Price>

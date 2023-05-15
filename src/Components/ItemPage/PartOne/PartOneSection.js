@@ -17,6 +17,7 @@ import {
 // Global Style
 import { Price, Return } from "../ItemPageStyle";
 import RatingsSection from "../../../GlobalStyle/Ratings";
+import { Spin } from "antd";
 
 const PartOneSection = ({ product }) => {
   const [
@@ -28,7 +29,11 @@ const PartOneSection = ({ product }) => {
       {/* 1- Img */}
       <BoxImg>
         <div className="wrap-img">
-          <img src={img} className="smail_img" alt={name} />
+          {img ? (
+            <img src={img} alt={name} loading="eager" />
+          ) : (
+            <Spin size="large" />
+          )}
         </div>
       </BoxImg>
       <Caption>

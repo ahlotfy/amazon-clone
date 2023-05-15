@@ -1,6 +1,7 @@
 // Basic
 import React, { useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { Spin } from "antd";
 // Data
 import PRODUCTS_DATA from "../../Data/products.json";
 // Format Currency
@@ -52,15 +53,17 @@ const SearchSection = () => {
             <ProductBox key={id}>
               {/* 1- Img */}
               <ProductImg as={Link} to={`/item_page#${id}`}>
-                <Img src={img} alt={name} />
+                {img ? (
+                  <Img src={img} alt={name} loading="eager" />
+                ) : (
+                  <Spin size="large" />
+                )}
               </ProductImg>
               <ProductCaption>
                 {/* 2- Name */}
                 <Link to={`/item_page#${id}`}>{name}</Link>
-
                 {/*3- Ratings */}
                 <RatingsSection stars={stars} review={review} />
-
                 {/*4- Save */}
                 {save ? (
                   <Discount>
@@ -69,7 +72,6 @@ const SearchSection = () => {
                 ) : (
                   ""
                 )}
-
                 {/* 5- Price */}
                 <Price>
                   <span>{formatCurrency(price)}</span>

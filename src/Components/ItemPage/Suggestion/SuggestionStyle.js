@@ -29,13 +29,11 @@ const Item = styled.div`
 `;
 
 const BoxCaption = styled.div`
-  a.item-page {
+  a {
     color: black;
+    font-size: 14px;
     :hover {
       color: #c7511f;
-    }
-    p {
-      font-size: 14px;
     }
   }
 `;

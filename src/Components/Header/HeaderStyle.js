@@ -190,6 +190,7 @@ const OptionLineTwo = styled.div`
   font-size: 14px;
   line-height: 15px;
   font-weight: bold;
+  padding-top: 2px;
   @media (max-width: 768px) {
     margin-top: 5px;
   }
