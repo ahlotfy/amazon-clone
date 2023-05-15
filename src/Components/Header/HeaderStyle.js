@@ -20,20 +20,83 @@ const Logo = styled.a`
   @media (max-width: 576px) {
     margin: 0;
   }
-  .logo_img {
-    margin: 1px;
-    border: 1px solid transparent;
-    padding: 1px 8px 0px 6px;
-    :hover {
-      border-color: #fff;
+`;
+
+const ImgBox = styled.div`
+  margin: 1px;
+  border: 1px solid transparent;
+  padding: 1px 8px 0px 6px;
+  :hover {
+    border-color: #fff;
+  }
+  :active {
+    border-color: var(--mainColor);
+  }
+  img {
+    width: 100px;
+    margin-top: 4px;
+  }
+`;
+const IconBar = styled.div`
+  width: 40px;
+  height: 60px;
+  @media (min-width: 576px) {
+    display: none;
+  }
+  input {
+    display: none;
+    & + label {
+      transition: transform 0.5s;
+      transform: rotate(0deg);
+      height: 100%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
     }
-    :active {
-      border-color: var(--mainColor);
+    &:checked + label {
+      transform: rotate(360deg);
     }
-    img {
-      width: 100px;
-      margin-top: 4px;
+
+    &:checked + label span {
+      transform: rotate(45deg);
     }
+
+    &:checked + label span::before {
+      transform: rotate(90deg);
+      top: 0;
+    }
+
+    &:checked + label span::after {
+      transform: rotate(90deg);
+      top: 0;
+    }
+  }
+
+  span {
+    position: relative;
+    display: block;
+    ::before {
+      top: -12px;
+    }
+    ::after {
+      top: 12px;
+    }
+  }
+
+  span,
+  span::before,
+  span::after {
+    width: 40px;
+    height: 4px;
+    background-color: var(--lightColor);
+    border-radius: 5px;
+  }
+
+  span::before,
+  span::after {
+    content: "";
+    position: absolute;
+    transition: transform 0.5s;
   }
 `;
 
@@ -43,102 +106,26 @@ const TopFloor = styled.div`
   align-items: center;
   @media (max-width: 768px) {
     width: 100%;
-  }
-  @media (max-width: 576px) {
     flex-direction: column;
   }
+  @media (max-width: 576px) {
+    align-items: stretch;
+  }
 `;
 
-const BarSearch = styled.div`
-  padding: 10px 4px 10px 3px;
-  height: 60px;
-  width: 100%;
-  margin-left: 6px;
-  margin-right: 6px;
+const IsSmallScreen = styled.div`
   display: flex;
-  position: relative;
-`;
-
-const WrapInput = styled.div`
-  display: inherit;
-  width: 100%;
-  border-radius: 2px;
-  overflow: hidden;
-  input#input-search {
-    text-indent: 10px;
-    width: calc(100% - 50px);
-    line-height: 1.2;
-  }
-`;
-
-const SearchIcon = styled.label`
-  margin: 0;
-  display: block;
-  width: 50px;
-  background-color: var(--secondColor);
-  :hover {
-    background-color: var(--mainColor);
-  }
-  i {
-    font-size: 20px;
-    width: 100%;
-    height: 100%;
+  @media (max-width: 576px) {
+    padding-left: 10px;
+    padding-right: 10px;
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
-    ::before {
-      font-weight: 900;
-      font-family: "Font Awesome 6 Free";
-      content: "\f07a";
-    }
-  }
-`;
-
-const DropSearch = styled.div`
-  display: none;
-  position: absolute;
-  width: calc(100% - 9px);
-  background-color: #fff;
-  z-index: 2000;
-  top: 50px;
-  left: 50%;
-  transform: translateX(-50%);
-  height: auto;
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.13);
-  border: 1px solid #bbb;
-
-  div {
-    a {
-      color: black;
-    }
-
-    p.search_suggestion_line {
-      padding: 7px 10px;
-      width: 100%;
-      cursor: pointer;
-      margin: 0;
-      font-size: 16px;
-      font-weight: 700;
-      line-height: normal;
-
-      :hover {
-        background-color: #eee;
-      }
-
-      &.active {
-        background-color: #eee;
-      }
-
-      span {
-        :last-of-type {
-          color: #787777;
-        }
-      }
-    }
   }
 `;
 
 const HeaderActions = styled.div`
+  transition: all 0.5s ease;
   margin-left: 10px;
   margin-right: 10px;
   display: flex;
@@ -148,10 +135,19 @@ const HeaderActions = styled.div`
   @media (max-width: 768px) {
     width: 100%;
   }
-  @media (max-width: 576px) {
-    margin: 1px;
+  @media (min-width: 577px) {
+    display: flex !important;
+    flex-direction: row !important;
   }
-  @media (max-width: 400px) {
+  @media (max-width: 576px) {
+    height: 0px;
+    margin: 0px;
+    overflow: hidden;
+    flex-direction: column;
+  }
+  &.active {
+    height: 250px;
+    display: flex;
     flex-direction: column;
   }
 `;
@@ -167,9 +163,11 @@ const HeaderOptions = styled.div`
   padding-bottom: 10px;
   padding-left: 9px;
   padding-right: 9px;
-  :hover {
-    border-color: #fff;
+  :hover,
+  :focus {
+    border-color: var(--lightColor);
   }
+
   i {
     font-size: 20px;
   }
@@ -177,6 +175,7 @@ const HeaderOptions = styled.div`
     border-color: var(--mainColor);
   }
 `;
+
 const OptionLineOne = styled.div`
   font-size: 12px;
   line-height: 14px;
@@ -187,6 +186,7 @@ const OptionLineOne = styled.div`
     word-break: break-word;
   }
 `;
+
 const OptionLineTwo = styled.div`
   font-size: 14px;
   line-height: 15px;
@@ -219,14 +219,14 @@ const Basket = styled(HeaderOptions)`
     color: var(--mainColor);
   }
 `;
+
 export {
   Header,
   TopFloor,
+  IconBar,
+  IsSmallScreen,
   Logo,
-  BarSearch,
-  SearchIcon,
-  DropSearch,
-  WrapInput,
+  ImgBox,
   HeaderActions,
   HeaderOptions,
   OptionLineOne,

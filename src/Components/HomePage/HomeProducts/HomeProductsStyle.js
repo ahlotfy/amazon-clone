@@ -2,6 +2,8 @@ import styled from "@emotion/styled";
 
 const Container = styled.div`
   position: relative;
+  min-height: 100%;
+  z-index: 222;
   display: grid;
   grid-template-columns: repeat(4, auto);
   @media (max-width: 1500px) {
@@ -51,6 +53,11 @@ const ImgBox = styled.div`
     min-width: 200px;
     min-height: min-content;
   }
+  .loading_large_img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
   img,
   .loading_large_img {
     background-color: var(--lightColor);
@@ -94,6 +101,9 @@ const ImgContent = styled.div`
   max-width: 145px;
   min-height: 145px;
   max-height: 145px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   a {
     font-size: 12px;
     font-weight: 500;

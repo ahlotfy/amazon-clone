@@ -1,5 +1,6 @@
 // Basic
 import React, { useRef } from "react";
+import { Carousel } from "antd";
 // Images
 import off1 from "../../../images/Slider/off1.png";
 import off2 from "../../../images/Slider/off2.png";
@@ -7,92 +8,60 @@ import off3 from "../../../images/Slider/off3.png";
 import off4 from "../../../images/Slider/off4.png";
 import off5 from "../../../images/Slider/off5.png";
 // Style
-import { Slide, Img, Navigate } from "./SlidesStyle";
+import { Wrap, Clear, Navigate, Slide } from "./SlidesStyle";
 
 const SlidesFun = () => {
-  const slideRef = useRef();
-  // Start Next Slide
-  const Next = () => {
-    // Slide 2
-    if (
-      slideRef.current.style.marginLeft === "" ||
-      slideRef.current.style.marginLeft === "0%"
-    ) {
-      slideRef.current.style.marginLeft = "-14%";
-    }
-    // Slide 3
-    else if (slideRef.current.style.marginLeft === "-14%") {
-      slideRef.current.style.marginLeft = "-28%";
-    }
-    // Slide 4
-    else if (slideRef.current.style.marginLeft === "-28%") {
-      slideRef.current.style.marginLeft = "-42%";
-    }
-    // Slide 5
-    else if (slideRef.current.style.marginLeft === "-42%") {
-      slideRef.current.style.marginLeft = "-56%";
-    }
-    // Slide 1
-    else {
-      slideRef.current.style.marginLeft = "0%";
-    }
+  const ref = useRef();
+  const nextSlide = () => {
+    ref.current.next();
   };
-  // End Next Slide
-
-  // Start Previous Slide
-  const Previous = () => {
-    // Slide 5
-    if (
-      slideRef.current.style.marginLeft === "" ||
-      slideRef.current.style.marginLeft === "0%"
-    ) {
-      slideRef.current.style.marginLeft = "-56%";
-    }
-    // Slide 4
-    else if (slideRef.current.style.marginLeft === "-56%") {
-      slideRef.current.style.marginLeft = "-42%";
-    }
-    // Slide 3
-    else if (slideRef.current.style.marginLeft === "-42%") {
-      slideRef.current.style.marginLeft = "-28%";
-    }
-    // Slide 2
-    else if (slideRef.current.style.marginLeft === "-28%") {
-      slideRef.current.style.marginLeft = "-14%";
-    }
-    // Slide 1
-    else {
-      slideRef.current.style.marginLeft = "0%";
-    }
+  const prevSlide = () => {
+    ref.current.prev();
   };
-  // End Previous Slide
   return (
     <>
-      {/* Arrow Left */}
-      <Navigate onClick={() => Previous()}>
-        <i className="fa-solid fa-chevron-left" />
-      </Navigate>
-      {/* Start Slides */}
-      <Slide ref={slideRef}>
-        <Img src={off1} />
-      </Slide>
-      <Slide>
-        <Img src={off2} />
-      </Slide>
-      <Slide>
-        <Img src={off3} />
-      </Slide>
-      <Slide>
-        <Img src={off4} />
-      </Slide>
-      <Slide>
-        <Img src={off5} />
-      </Slide>
-      {/* End Slides */}
-      {/* Arrow Right */}
-      <Navigate onClick={() => Next()}>
-        <i className="fa-solid fa-chevron-right" />
-      </Navigate>
+      <Wrap>
+        <Carousel className="carousel" dots={false} ref={ref} autoplay>
+          <div>
+            <Slide>
+              <img src={off1} alt="Slide1" loading="eager" />
+            </Slide>
+          </div>
+          <div>
+            <Slide>
+              <img src={off2} alt="Slide2" loading="eager" />
+            </Slide>
+          </div>
+          <div>
+            <Slide>
+              <img src={off3} alt="Slide3" loading="eager" />
+            </Slide>
+          </div>
+          <div>
+            <Slide>
+              <img src={off4} alt="Slide4" loading="eager" />
+            </Slide>
+          </div>
+          <div>
+            <Slide>
+              <img src={off5} alt="Slide5" loading="eager" />
+            </Slide>
+          </div>
+        </Carousel>
+      </Wrap>
+      {/* Clear ===> Separator between (Slider) - (Products) */}
+      <Clear>
+        <Navigate>
+          <i
+            className="fa-solid fa-chevron-right right"
+            onClick={() => nextSlide()}
+          />
+          <i
+            className="fa-solid fa-chevron-left left"
+            onClick={() => prevSlide()}
+          />
+        </Navigate>
+      </Clear>
     </>
   );
 };

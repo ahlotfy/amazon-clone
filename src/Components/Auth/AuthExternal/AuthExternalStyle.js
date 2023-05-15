@@ -14,6 +14,7 @@ const SignInSection = styled.div`
   }
   div {
     p {
+      padding: 10px;
       font-size: 16px;
     }
   }

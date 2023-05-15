@@ -1,5 +1,6 @@
 // Basic
 import React from "react";
+import { Image, Spin } from "antd";
 // Style
 import {
   Container,
@@ -26,9 +27,11 @@ const HomeProductsSection = () => {
               <ImgBox>
                 <a href={`/search#${type}`}>
                   {img ? (
-                    <img src={img} alt={name} />
+                    <Image src={img} alt={name} loading="eager" />
                   ) : (
-                    <div className="loading_large_img"></div>
+                    <div className="loading_large_img">
+                      <Spin size="large" />
+                    </div>
                   )}
                 </a>
               </ImgBox>
@@ -42,7 +45,11 @@ const HomeProductsSection = () => {
                     <div className="box_content_group" key={id}>
                       <ImgContent>
                         <a href={`/search#${type}`}>
-                          <img src={img} alt={name} />
+                          {img ? (
+                            <Image src={img} alt={name} loading="eager" />
+                          ) : (
+                            <Spin size="large" />
+                          )}
                         </a>
                       </ImgContent>
                       <a href={`/search#${type}`}>{name}</a>

@@ -1,39 +1,56 @@
 import styled from "@emotion/styled";
 
-const Slide = styled.div`
-  position: relative;
-  width: 13%;
-  transition: margin-left 1s ease;
-
-  &:nth-of-type(2) {
-    margin: 0 1%;
-  }
-
-  &:nth-of-type(4) {
-    margin: 0 1%;
-  }
-`;
-
-const Img = styled.img`
-  width: 100%;
-  object-fit: cover;
-`;
-
-const Navigate = styled.label`
-  font-size: 40px;
-  @media (max-width: 576px) {
-    font-size: 20px;
-  }
+const Wrap = styled.div`
   position: absolute;
-  z-index: 222;
-  top: 20%;
-  transform: translateY(-50%);
-  cursor: pointer;
-  :first-of-type {
-    left: 20px;
-  }
-  :last-of-type {
-    right: 20px;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  z-index: 2;
+  .carousel {
+    position: relative;
+    z-index: 1;
+    img {
+      object-fit: cover !important;
+      width: 100%;
+    }
   }
 `;
-export { Slide, Img, Navigate };
+const Slide = styled.h3`
+  margin: 0;
+  color: "#fff";
+  line-height: "160px";
+  text-align: "center";
+  background: "#364d79";
+`;
+const Clear = styled.div`
+  height: 300px;
+  @media (max-width: 768px) {
+    height: 150px;
+  }
+  @media (max-width: 576px) {
+    height: 100px;
+  }
+`;
+const Navigate = styled.div`
+  top: 50%;
+  transform: translateY(-50%);
+  position: relative;
+  font-size: 40px;
+  z-index: 2;
+  @media (max-width: 576px) {
+    font-size: 30px;
+  }
+  i {
+    cursor: pointer;
+    top: 50%;
+    transform: translateY(-50%);
+    position: absolute;
+    &.left {
+      left: 20px;
+    }
+    &.right {
+      right: 20px;
+    }
+  }
+`;
+export { Wrap, Clear, Navigate, Slide };
