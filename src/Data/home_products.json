@@ -15,7 +15,7 @@
         "id": 3,
         "img": "/imgs/home_products/camera_displayed.jpg",
         "name": "Security cameras",
-        "type": "camera"
+        "type": "securitycamera"
     },
     {
         "id": 4,
