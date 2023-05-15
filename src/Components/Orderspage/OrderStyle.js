@@ -31,6 +31,9 @@ const CollectionsOrderBar = styled.div`
   background-color: #f0f2f2;
   box-shadow: 0 2px 5px rgba(15, 17, 17, 0.15);
   padding: 5px 20px;
+  @media (max-width: 576px) {
+    flex-direction: column;
+  }
   cursor: pointer;
   :hover {
     background-color: var(--lightColor);
