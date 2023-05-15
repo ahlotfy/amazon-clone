@@ -25,7 +25,11 @@ const SearchBarSection = () => {
     setShowValueInInput(e.target.value.toLowerCase());
     setSelectedItem(-1);
 
-    if (data.length > 0 && e.target.value.length > 0) {
+    if (
+      data.length > 0 &&
+      e.target.value.length > 0 &&
+      e.target.value.length !== 0
+    ) {
       setTimeout(() => {
         setDropOpen(true);
       }, 100);
@@ -46,9 +50,11 @@ const SearchBarSection = () => {
       [
         ...new Set(PRODUCTS_DATA.map((data) => data.type.toLowerCase())),
         ...new Set(PRODUCTS_DATA.map((data) => data.brand.toLowerCase())),
-      ].filter(
-        (data) => data.includes(inputValue) && data.startsWith(inputValue)
-      )
+      ]
+        .filter(
+          (data) => data.includes(inputValue) && data.startsWith(inputValue)
+        )
+        .slice(0, 10)
     );
   }, [inputValue]);
 

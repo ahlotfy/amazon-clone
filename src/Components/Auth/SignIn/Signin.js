@@ -25,7 +25,6 @@ import {
   Heading,
   FormSection,
   InputRow,
-  Check,
   InnerConditions,
   RequiredHeading,
   RequiredInput,
@@ -78,7 +77,7 @@ const SignIn = () => {
             <img src={errorIcon} alt="Error"></img>
             <CaptionBox>
               <h4>There was a problem</h4>
-              <Check>We're sorry. Email or Password not found.</Check>
+              <p>We're sorry. Email or Password not found.</p>
             </CaptionBox>
           </PromiseBox>
         ) : (

@@ -1,5 +1,5 @@
 // Basic
-import React, { useState } from "react";
+import React from "react";
 // Check If Found User Or No
 import AuthExternal from "../Auth/AuthExternal/AuthExternal";
 // Function Slide For Move
@@ -13,7 +13,6 @@ const HomeSection = () => {
     <Home>
       <Container>
         <SlidesFun />
-
         <HomeProductsSection />
       </Container>
       {/*Check If Found User Or No*/}

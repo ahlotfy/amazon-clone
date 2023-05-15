@@ -38,7 +38,7 @@ const PromiseBox = styled.div`
     height: 30px;
   }
 
-  .box-error {
+  &.box-error {
     border: 3px solid #eed3d3;
     outline: 1px solid #c40000;
     .title {
@@ -48,7 +48,7 @@ const PromiseBox = styled.div`
     }
   }
 
-  .box-valid {
+  &.box-valid {
     border: 3px solid #89f9c3;
     outline: 1px solid #2bb673;
     .title {
@@ -103,12 +103,11 @@ const InputRow = styled.div`
     }
   }
 `;
-const Check = styled.p`
+
+const InnerConditions = styled.p`
   margin: 10px auto;
   line-height: 1.5;
   font-size: 12px;
-`;
-const InnerConditions = styled(Check)`
   span {
     color: #0d6d9b;
   }
@@ -200,7 +199,6 @@ export {
   Heading,
   FormSection,
   InputRow,
-  Check,
   InnerConditions,
   RequiredHeading,
   RequiredInput,

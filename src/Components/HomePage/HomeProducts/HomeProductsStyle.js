@@ -43,6 +43,8 @@ const ImgBox = styled.div`
   margin-bottom: 20px;
   display: flex;
   justify-content: center;
+  align-items: center;
+  background-color: #ddd;
   max-width: 300px;
   max-height: 300px;
   min-width: 300px;
@@ -53,13 +55,13 @@ const ImgBox = styled.div`
     min-width: 200px;
     min-height: min-content;
   }
-  .loading_large_img {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  img {
+    :hover {
+      filter: brightness(0.8);
+    }
   }
-  img,
-  .loading_large_img {
+
+  img {
     background-color: var(--lightColor);
     max-width: 300px;
     max-height: 300px;
@@ -86,8 +88,6 @@ const ImgGroup = styled.div`
   @media (max-width: 380px) {
     grid-template-columns: repeat(1, 1fr);
   }
-  .box_content_group {
-  }
   a {
     font-size: 14px;
     color: black;
@@ -104,10 +104,12 @@ const ImgContent = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+
   a {
     font-size: 12px;
     font-weight: 500;
   }
+
   img {
     cursor: pointer;
     height: 100%;
@@ -117,6 +119,10 @@ const ImgContent = styled.div`
     max-height: 145px;
     object-fit: cover;
     background-color: #ddd;
+
+    :hover {
+      filter: brightness(0.8);
+    }
   }
 `;
 

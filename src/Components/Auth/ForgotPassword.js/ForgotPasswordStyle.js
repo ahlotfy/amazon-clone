@@ -52,4 +52,8 @@ const ContinueBtn = styled.button`
   }
 `;
 
-export { Hint, UserStatus, ContinueBtn };
+const Check = styled.p`
+  line-height: 1.5;
+  font-size: 12px;
+`;
+export { Hint, UserStatus, ContinueBtn, Check };

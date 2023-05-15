@@ -9,7 +9,7 @@ import logo from "../../../images/icon/logo-black.png";
 import errorIcon from "../../../images/icon/error-icon.png";
 import validIcon from "../../../images/icon/valid-icon.png";
 // Style
-import { Hint, UserStatus, ContinueBtn } from "./ForgotPasswordStyle";
+import { Hint, UserStatus, ContinueBtn, Check } from "./ForgotPasswordStyle";
 // Global Style
 import {
   AuthBox,
@@ -19,7 +19,6 @@ import {
   Heading,
   FormSection,
   InputRow,
-  Check,
   InnerConditions,
   RequiredHeading,
   RequiredInput,
@@ -69,7 +68,7 @@ const ForgotPassword = () => {
               <img src={validIcon} alt="valid"></img>
               <div className="title">
                 <h4>There was a problem</h4>
-                <Check>Check your inbox for reset password.</Check>
+                <p>Check your inbox for reset password.</p>
               </div>
             </PromiseBox>
           ) : promise === false ? (
