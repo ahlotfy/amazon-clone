@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+
 const PartOne = styled.div`
   display: flex;
   flex: 4;
@@ -13,6 +14,7 @@ const PartOne = styled.div`
     flex: 2;
   }
 `;
+
 const BoxImg = styled.div`
   display: flex;
   align-items: center;
@@ -50,6 +52,7 @@ const BoxImg = styled.div`
     }
   }
 `;
+
 const Caption = styled.div`
   flex: 1;
   margin-left: 20px;
@@ -58,6 +61,7 @@ const Caption = styled.div`
     margin-top: 30px;
   }
 `;
+
 const Top = styled.div`
   border-bottom: 1px solid #ddd;
   h2 {
@@ -65,10 +69,12 @@ const Top = styled.div`
     font-weight: normal;
   }
 `;
+
 const Mid = styled.div`
   padding-top: 10px;
   border-bottom: 1px solid #ddd;
 `;
+
 const Features = styled.div`
   padding-top: 10px;
   padding-bottom: 2px;
@@ -109,6 +115,7 @@ const Features = styled.div`
     }
   }
 `;
+
 const Bottom = styled.div`
   padding-top: 10px;
   border-bottom: 1px solid #ddd;
@@ -123,6 +130,7 @@ const Bottom = styled.div`
     }
   }
 `;
+
 const InfoList = styled.table`
   width: 100%;
   line-height: 20px;
@@ -159,6 +167,7 @@ const About = styled.div`
     }
   }
 `;
+
 export {
   PartOne,
   BoxImg,

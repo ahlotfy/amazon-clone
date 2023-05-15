@@ -15,6 +15,7 @@ const Wrap = styled.div`
     }
   }
 `;
+
 const Slide = styled.h3`
   margin: 0;
   color: "#fff";
@@ -31,6 +32,7 @@ const Clear = styled.div`
     height: 100px;
   }
 `;
+
 const Navigate = styled.div`
   top: 50%;
   transform: translateY(-50%);
@@ -53,4 +55,5 @@ const Navigate = styled.div`
     }
   }
 `;
+
 export { Wrap, Clear, Navigate, Slide };

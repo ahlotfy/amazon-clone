@@ -8,6 +8,7 @@ const PartTwo = styled.div`
   margin-left: auto;
   margin-right: auto;
 `;
+
 const CartFrame = styled.div`
   transition: all 1s;
   padding: 14px 18px;
@@ -78,6 +79,7 @@ const CartFrame = styled.div`
     }
   }
 `;
+
 const BuyList = styled.table`
   width: 100%;
   line-height: 16px;
@@ -131,4 +133,5 @@ const BoxImg = styled.div`
     object-fit: cover;
   }
 `;
+
 export { PartTwo, CartFrame, BuyList, AdsFrame, BoxImg };

@@ -7,6 +7,7 @@ const Container = styled.div`
   margin: auto;
   min-height: 100vh;
 `;
+
 const Item = styled.div`
   display: flex;
   border-bottom: 1px solid #ddd;
@@ -41,6 +42,7 @@ const Price = styled.div`
     }
   }
 `;
+
 const Return = styled.div`
   span {
     font-size: 14px;

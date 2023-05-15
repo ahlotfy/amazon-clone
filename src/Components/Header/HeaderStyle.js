@@ -167,7 +167,6 @@ const HeaderOptions = styled.div`
   :focus {
     border-color: var(--lightColor);
   }
-
   i {
     font-size: 20px;
   }

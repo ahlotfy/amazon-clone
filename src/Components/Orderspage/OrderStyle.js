@@ -12,12 +12,15 @@ const Container = styled.div`
     }
   }
 `;
+
 const Heading = styled.h2`
   padding: 10px;
 `;
+
 const CollectionsBox = styled.div`
   margin-bottom: 20px;
 `;
+
 const CollectionsOrderBar = styled.div`
   font-weight: 500;
   display: flex;
@@ -40,6 +43,7 @@ const CollectionsOrderBar = styled.div`
     }
   }
 `;
+
 const CollectionsOrderDrop = styled.div`
   transition: all 0.2s ease;
   height: 0;
@@ -54,6 +58,7 @@ const CollectionsOrderDrop = styled.div`
     height: 200px;
   }
 `;
+
 const Orders = styled.div`
   padding: 10px;
   padding-top: 20px;
@@ -61,6 +66,7 @@ const Orders = styled.div`
   display: flex;
   align-items: center;
 `;
+
 const ImgBox = styled.div`
   padding: 20px;
   padding-top: 0px;
@@ -69,6 +75,7 @@ const ImgBox = styled.div`
     object-fit: contain;
   }
 `;
+
 const CaptionBox = styled.div`
   @media (max-width: 576px) {
     display: flex;
@@ -81,6 +88,7 @@ const CaptionBox = styled.div`
     font-size: 14px;
   }
 `;
+
 const Quantity = styled.div`
   margin-bottom: 10px;
   margin-top: 10px;
@@ -132,6 +140,7 @@ const EmptyCaptionBox = styled.div`
     margin-bottom: 8px;
   }
 `;
+
 export {
   Heading,
   Container,

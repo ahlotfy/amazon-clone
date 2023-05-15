@@ -8,6 +8,7 @@ const Suggestion = styled.div`
     width: 100%;
   }
 `;
+
 const ProductBox = styled.div`
   display: flex;
   @media (max-width: 768px) {
@@ -16,6 +17,7 @@ const ProductBox = styled.div`
     align-items: center;
   }
 `;
+
 const Item = styled.div`
   margin-left: 30px;
   margin-right: 30px;
@@ -25,6 +27,7 @@ const Item = styled.div`
   align-items: center;
   justify-content: center;
 `;
+
 const BoxCaption = styled.div`
   a.item-page {
     color: black;
@@ -47,4 +50,5 @@ const BoxImg = styled.div`
     object-fit: contain;
   }
 `;
+
 export { Suggestion, ProductBox, Item, BoxCaption, BoxImg };

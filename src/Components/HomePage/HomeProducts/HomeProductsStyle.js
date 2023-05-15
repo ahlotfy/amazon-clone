@@ -105,7 +105,6 @@ const ImgContent = styled.a`
   display: flex;
   align-items: center;
   justify-content: center;
-
   img {
     cursor: pointer;
     min-width: 145px;
@@ -114,7 +113,6 @@ const ImgContent = styled.a`
     max-height: 145px;
     object-fit: cover;
     background-color: #ddd;
-
     :hover {
       filter: brightness(0.8);
     }

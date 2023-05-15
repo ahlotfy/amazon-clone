@@ -4,7 +4,6 @@ const SearchBar = styled.div`
   padding: 10px 10px 10px 10px;
   height: 60px;
   width: 100%;
-
   display: flex;
   position: relative;
 `;
@@ -59,7 +58,6 @@ const ResultSearch = styled.div`
   a {
     color: black;
   }
-
   p.search_suggestion_line {
     padding: 7px 10px;
     width: 100%;
@@ -81,6 +79,7 @@ const ResultSearch = styled.div`
     }
   }
 `;
+
 export {
   SearchBar,
   WrapInput,

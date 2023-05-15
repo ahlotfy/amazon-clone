@@ -3,6 +3,7 @@ import styled from "@emotion/styled";
 const Home = styled.div`
   background-color: var(--lightColor);
 `;
+
 const Container = styled.div`
   padding: 0;
   position: relative;
@@ -10,4 +11,5 @@ const Container = styled.div`
   max-width: 1500px;
   margin: auto;
 `;
+
 export { Home, Container };

@@ -60,7 +60,6 @@ const CopyRight = styled.div`
   width: 100%;
   background-color: var(--thirdyColor);
   color: #fff;
-
   div {
     max-width: 500px;
     display: flex;
@@ -70,7 +69,6 @@ const CopyRight = styled.div`
     @media (max-width: 400px) {
       flex-direction: column;
     }
-
     span {
       cursor: pointer;
       padding: 5px;
@@ -80,7 +78,6 @@ const CopyRight = styled.div`
       }
     }
   }
-
   p {
     margin: 0;
   }

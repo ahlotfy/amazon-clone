@@ -54,6 +54,7 @@ const ProductCaption = styled.div`
     font-size: 14px;
   }
 `;
+
 const Quantity = styled.div`
   margin-bottom: 10px;
   margin-top: 10px;
@@ -84,12 +85,14 @@ const DeleteBtn = styled.button`
     border-color: black;
   }
 `;
+
 const EmptyBasket = styled.h3`
   display: flex;
   align-items: center;
   justify-content: center;
   color: #575757;
 `;
+
 export {
   Items,
   ProductBox,

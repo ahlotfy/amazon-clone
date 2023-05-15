@@ -7,6 +7,7 @@ const Ratings = styled.div`
   align-items: center;
   font-size: 14px;
 `;
+
 const Stars = styled.div`
   cursor: pointer;
   i {
@@ -19,6 +20,7 @@ const Stars = styled.div`
     }
   }
 `;
+
 const Review = styled.div`
   padding: 0 10px;
   color: var(--linkColor);
