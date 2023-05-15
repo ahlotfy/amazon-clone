@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 // Format Currency
 import formatCurrency from "../../Setting/formatCurrency";
 // Component
-import RatingsSection from "../../Subscriptions/Ratings";
+import RatingsSection from "../../GlobalStyle/Ratings";
 // Style
 import {
   Products,

@@ -15,7 +15,7 @@ import {
 } from "./SuggestionStyle";
 import { Price } from "../ItemPageStyle";
 // Global Style
-import RatingsSection from "../../../Subscriptions/Ratings";
+import RatingsSection from "../../../GlobalStyle/Ratings";
 
 const SuggestionSection = ({ product }) => {
   const [DesProduct] = product;

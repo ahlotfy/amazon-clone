@@ -9,7 +9,6 @@ import { dataBase } from "../../firebase";
 import { useAuth } from "../../Context/GlobalState";
 // Components
 import ViewedSection from "../ViewedItems/ViewedSection";
-import RatingsSection from "../../Subscriptions/Ratings";
 // Format Currency
 import formatCurrency from "../../Setting/formatCurrency";
 // Image
@@ -30,6 +29,8 @@ import {
   EmptyImgBox,
   EmptyCaptionBox,
 } from "./OrderStyle";
+// Global Styel
+import RatingsSection from "../../GlobalStyle/Ratings";
 
 const OrdersSection = () => {
   const [itemsInOrders, setItemsInOrders] = useState([]);

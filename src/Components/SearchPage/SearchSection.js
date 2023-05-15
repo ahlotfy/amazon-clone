@@ -17,7 +17,7 @@ import {
   ProductImg,
   Img,
 } from "./SearchStyle";
-import RatingsSection from "../../Subscriptions/Ratings";
+import RatingsSection from "../../GlobalStyle/Ratings";
 
 const SearchSection = () => {
   const location = useLocation();

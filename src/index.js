@@ -5,9 +5,9 @@ import { BrowserRouter as Router } from "react-router-dom";
 // Context API
 import GlobalProvider from "./Context/GlobalState";
 // Style
-import "./Style/Main.css";
+import "./Style/Main.scss";
+import "./Style/GlobalValues.scss";
 import "./Style/fontawesome-icon/css/all.css";
-import "./Style/GlobalValues.css";
 import "./Style/normalize.css";
 import { Spin } from "antd";
 // App

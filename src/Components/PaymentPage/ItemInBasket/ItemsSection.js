@@ -17,7 +17,7 @@ import {
   EmptyBasket,
 } from "./ItemsStyle";
 // Global Style
-import RatingsSection from "../../../Subscriptions/Ratings";
+import RatingsSection from "../../../GlobalStyle/Ratings";
 
 const ItemsSection = () => {
   const { dispatch, basket, lengthItems } = useAuth();
