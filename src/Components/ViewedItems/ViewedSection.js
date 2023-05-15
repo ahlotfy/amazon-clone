@@ -26,7 +26,7 @@ const ViewedSection = ({ row }) => {
 
   return (
     <Container>
-      <h3>Recently viewed products</h3>
+      {data && <h3>Recently viewed products</h3>}
       {data?.length > 0 && (
         <Products className={row && "row"}>
           {data?.map((item) => {
