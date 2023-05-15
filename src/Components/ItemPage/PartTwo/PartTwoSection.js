@@ -1,15 +1,15 @@
 // Basic
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef } from "react";
 import { Link } from "react-router-dom";
 // Context API
 import { useAuth } from "../../../Context/GlobalState";
 // Format Currency
 import formatCurrency from "../../../Setting/formatCurrency";
+// Image
 import keyboardAds from "../../../images/Ads/keyboard-ads.jpg";
 import mouseAds from "../../../images/Ads/mouse-ads.jpg";
 import headphoneAds from "../../../images/Ads/headphone-ads.jpg";
 import chairsAds from "../../../images/Ads/chairs-ads.jpg";
-
 // Style
 import { BuyList, CartFrame, PartTwo, AdsFrame, BoxImg } from "./PartTwoStyle";
 import { Price, Return } from "../ItemPageStyle";
@@ -90,7 +90,7 @@ const PartTwoSection = ({ product }) => {
       });
     }
   };
-  
+
   return (
     <PartTwo>
       <CartFrame ref={cartFrameRef}>

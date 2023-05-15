@@ -15,6 +15,7 @@ const Payment = styled.div`
     padding: 10px;
   }
 `;
+
 const DetailsBox = styled.div`
   padding: 20px;
   margin-top: 30px;
@@ -43,6 +44,7 @@ const RequiredInput = styled.input`
   text-indent: 5px;
   border-radius: 4px;
 `;
+
 const Row = styled.div`
   display: flex;
   padding: 20px;
@@ -55,6 +57,7 @@ const Row = styled.div`
     align-items: center;
   }
 `;
+
 const Address = styled.div`
   padding-left: 30px;
   padding-right: 30px;
@@ -90,6 +93,7 @@ const CreditCard = styled.form`
     width: 100%;
   }
 `;
+
 const InnerRow = styled.div`
   width: 100%;
   display: flex;
@@ -105,10 +109,12 @@ const InnerRow = styled.div`
     flex-direction: column;
   }
 `;
+
 const TotalPrice = styled.div`
   padding: 10px;
   text-align: center;
 `;
+
 const BuyBtn = styled.button`
   min-height: 35px;
   color: black;
@@ -140,6 +146,7 @@ const BuyBtn = styled.button`
     max-width: 150px;
   }
 `;
+
 export {
   Payment,
   DetailsBox,

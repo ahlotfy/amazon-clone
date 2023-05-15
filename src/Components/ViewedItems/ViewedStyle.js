@@ -5,6 +5,7 @@ const Container = styled.div`
     margin-bottom: 10px;
   }
 `;
+
 const Products = styled.div`
   background-color: #fff;
   padding: 10px;
@@ -27,6 +28,7 @@ const Products = styled.div`
     }
   }
 `;
+
 const ProductBox = styled.div`
   display: flex;
   padding-top: 10px;
@@ -37,6 +39,7 @@ const ProductBox = styled.div`
     }
   }
 `;
+
 const ProductImg = styled.div`
   padding: 20px;
   img {
@@ -44,6 +47,7 @@ const ProductImg = styled.div`
     object-fit: contain;
   }
 `;
+
 const ProductCaption = styled.div`
   max-width: 300px;
   p {
@@ -51,12 +55,14 @@ const ProductCaption = styled.div`
     font-size: 14px;
   }
 `;
+
 const Price = styled.div`
   font-size: 16px;
   font-weight: bold;
   padding: 10px 0;
   color: #000;
 `;
+
 const Button = styled.button`
   display: block;
   margin-top: 10px;

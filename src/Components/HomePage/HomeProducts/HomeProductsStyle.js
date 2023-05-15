@@ -39,7 +39,7 @@ const CaptionBox = styled.div`
   }
 `;
 
-const ImgBox = styled.div`
+const ImgBox = styled.a`
   margin-bottom: 20px;
   display: flex;
   justify-content: center;
@@ -89,6 +89,7 @@ const ImgGroup = styled.div`
     grid-template-columns: repeat(1, 1fr);
   }
   a {
+    margin-top: 5px;
     font-size: 14px;
     color: black;
     text-align: center;
@@ -96,7 +97,7 @@ const ImgGroup = styled.div`
   }
 `;
 
-const ImgContent = styled.div`
+const ImgContent = styled.a`
   min-width: 145px;
   max-width: 145px;
   min-height: 145px;
@@ -105,14 +106,8 @@ const ImgContent = styled.div`
   align-items: center;
   justify-content: center;
 
-  a {
-    font-size: 12px;
-    font-weight: 500;
-  }
-
   img {
     cursor: pointer;
-    height: 100%;
     min-width: 145px;
     max-width: 145px;
     min-height: 145px;
@@ -126,7 +121,7 @@ const ImgContent = styled.div`
   }
 `;
 
-const SeeMore = styled.div`
+const SeeMore = styled.a`
   cursor: pointer;
   color: var(--linkColor);
   :hover {

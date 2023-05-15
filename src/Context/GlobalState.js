@@ -1,6 +1,5 @@
 // Basic
 import React from "react";
-
 import { createContext, useContext, useEffect, useReducer } from "react";
 // Reducer
 import AppReducer, { initialState } from "./AppReducer";

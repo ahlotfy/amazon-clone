@@ -27,6 +27,10 @@ const Price = styled.div`
   }
   & .cost {
     font-size: 28px;
+    @media (max-width: 576px) {
+      font-weight: bold;
+      font-size: 18px;
+    }
   }
   p {
     color: #565959;

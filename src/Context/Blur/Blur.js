@@ -1,6 +1,9 @@
-import { createContext, useContext, useState } from "react";
+// Basic
 import React from "react";
+import { createContext, useContext, useState } from "react";
+// Style
 import { Blur } from "./BlurStyle";
+
 const GlobalBlur = createContext();
 const BlurProvider = ({ children }) => {
   const [blur, setBlur] = useState(false);

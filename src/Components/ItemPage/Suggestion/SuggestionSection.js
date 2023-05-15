@@ -1,4 +1,11 @@
+// Basic
 import React, { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+// Data
+import PRODUCTS_DATA from "../../../Data/products.json";
+// Format Currency
+import formatCurrency from "../../../Setting/formatCurrency";
+// Style
 import {
   BoxImg,
   ProductBox,
@@ -7,10 +14,7 @@ import {
   Suggestion,
 } from "./SuggestionStyle";
 import { Price } from "../ItemPageStyle";
-
-import PRODUCTS_DATA from "../../../Data/products.json";
-import { Link, useLocation } from "react-router-dom";
-import formatCurrency from "../../../Setting/formatCurrency";
+// Global Style
 import RatingsSection from "../../../Subscriptions/Ratings";
 
 const SuggestionSection = ({ product }) => {

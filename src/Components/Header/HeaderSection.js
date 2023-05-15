@@ -7,6 +7,8 @@ import { useAuth } from "../../Context/GlobalState";
 import { auth } from "../../firebase";
 // Style
 import logo from "../../images/icon/logo-white.png";
+// Components
+import SearchBarSection from "./SearchBar/SearchBarSection";
 import {
   Header,
   IconBar,
@@ -20,7 +22,6 @@ import {
   Basket,
   HeaderActions,
 } from "./HeaderStyle";
-import SearchBarSection from "./SearchBar/SearchBarSection";
 
 const HeaderSection = () => {
   const smallScreen = window.matchMedia("(max-width: 576px)");

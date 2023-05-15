@@ -9,6 +9,7 @@ import "./Style/Main.css";
 import "./Style/fontawesome-icon/css/all.css";
 import "./Style/GlobalValues.css";
 import "./Style/normalize.css";
+import { Spin } from "antd";
 // App
 const App = React.lazy(() => import("./App"));
 
@@ -18,7 +19,19 @@ root.render(
     <Router>
       <GlobalProvider>
         <React.Suspense
-          fallback={<div style={{ width: "100%", height: "100vh" }}></div>}
+          fallback={
+            <div
+              style={{
+                width: "100%",
+                height: "100vh",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
+              <Spin />
+            </div>
+          }
         >
           <App />
         </React.Suspense>

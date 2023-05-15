@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+
 const Items = styled.div`
   display: grid;
   width: 100%;
@@ -21,6 +22,7 @@ const Items = styled.div`
     }
   }
 `;
+
 const ProductBox = styled.div`
   display: flex;
   padding-top: 10px;

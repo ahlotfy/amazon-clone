@@ -25,10 +25,10 @@ const BoxImg = styled.div`
     width: 90%;
   }
   .wrap-img {
-    max-width: 400px;
+    width: 400px;
+    height: 400px;
     min-width: 400px;
     min-height: 300px;
-    max-height: 400px;
     margin: auto;
     @media (max-width: 992px) {
       margin: 0px auto 0px 0px;
@@ -36,10 +36,16 @@ const BoxImg = styled.div`
     @media (max-width: 768px) {
       margin: auto;
     }
+    @media (max-width: 576px) {
+      width: 200px;
+      height: 200px;
+      min-width: 200px;
+      min-height: 200px;
+    }
     img {
-      max-width: 400px;
-      min-width: 400px;
-      max-height: 400px;
+      width: 100%;
+      height: 100%;
+      min-width: 100%;
       object-fit: contain;
     }
   }

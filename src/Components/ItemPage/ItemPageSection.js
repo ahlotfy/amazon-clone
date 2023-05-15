@@ -1,11 +1,16 @@
+// Basic
 import React, { useEffect, useRef, useState } from "react";
-import { Container, Item } from "./ItemPageStyle";
+import { useLocation, useNavigate } from "react-router-dom";
+// Auth
 import AuthExternal from "../Auth/AuthExternal/AuthExternal";
-import SuggestionSection from "./Suggestion/SuggestionSection";
+// Data
+import PRODUCTS_DATA from "../../Data/products.json";
+// Components
 import PartOneSection from "./PartOne/PartOneSection";
 import PartTwoSection from "./PartTwo/PartTwoSection";
-import { useLocation, useNavigate } from "react-router-dom";
-import PRODUCTS_DATA from "../../Data/products.json";
+import SuggestionSection from "./Suggestion/SuggestionSection";
+// Style
+import { Container, Item } from "./ItemPageStyle";
 
 const ItemPageSection = () => {
   const ItemPageContainerRef = useRef();

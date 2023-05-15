@@ -1,4 +1,8 @@
+// Basic
 import React from "react";
+// Format Currency
+import formatCurrency from "../../../Setting/formatCurrency";
+// Style
 import {
   PartOne,
   BoxImg,
@@ -10,10 +14,9 @@ import {
   InfoList,
   About,
 } from "./PartOneStyle";
-
+// Global Style
 import { Price, Return } from "../ItemPageStyle";
-import formatCurrency from "../../../Setting/formatCurrency";
-import RatingsSection from "../../../Subscriptions/Ratings";
+import RatingsSection from "../../../GlobalStyle/Ratings";
 
 const PartOneSection = ({ product }) => {
   const [

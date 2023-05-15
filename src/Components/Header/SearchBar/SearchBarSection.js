@@ -1,8 +1,10 @@
+// Basic
 import React, { useEffect, useState } from "react";
+// Data
 import PRODUCTS_DATA from "../../../Data/products.json";
 // Context API
 import { useBlur } from "../../../Context/Blur/Blur";
-// Back End
+// Style
 import {
   DropSearch,
   SearchBar,

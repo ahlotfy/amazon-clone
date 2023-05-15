@@ -1,6 +1,8 @@
 // Basic
 import React from "react";
 import { Spin } from "antd";
+// Data
+import HOME_PRODUCTS_DATA from "../../../Data/home_products.json";
 // Style
 import {
   Container,
@@ -11,8 +13,6 @@ import {
   ImgContent,
   SeeMore,
 } from "./HomeProductsStyle";
-// Component
-import HOME_PRODUCTS_DATA from "../../../Data/home_products.json";
 
 const HomeProductsSection = () => {
   return (
@@ -24,14 +24,12 @@ const HomeProductsSection = () => {
             <CaptionBox>{!group && <h2>{name}</h2>}</CaptionBox>
             {/* Big Imgs */}
             {!group && (
-              <ImgBox>
-                <a href={`/search#${type}`}>
-                  {img ? (
-                    <img src={img} alt={name} loading="eager" />
-                  ) : (
-                    <Spin size="large" />
-                  )}
-                </a>
+              <ImgBox href={`/search#${type}`}>
+                {img ? (
+                  <img src={img} alt={name} loading="eager" />
+                ) : (
+                  <Spin size="large" />
+                )}
               </ImgBox>
             )}
             {/* Small Imgs */}
@@ -41,22 +39,22 @@ const HomeProductsSection = () => {
                   const { id, name, img, type } = itemGroup;
                   return (
                     <div className="box_content_group" key={id}>
-                      <ImgContent>
-                        <a href={`/search#${type}`}>
-                          {img ? (
-                            <img src={img} alt={name} loading="eager" />
-                          ) : (
-                            <Spin size="large" />
-                          )}
-                        </a>
+                      <ImgContent href={`/search#${type}`}>
+                        {img ? (
+                          <img src={img} alt={name} loading="eager" />
+                        ) : (
+                          <Spin size="large" />
+                        )}
                       </ImgContent>
-                      <a href={`/search#${type}`}>{name}</a>
+                      <a href={`/search#${type}`} className="name_product">
+                        {name}
+                      </a>
                     </div>
                   );
                 })}
               </ImgGroup>
             )}
-            <SeeMore href={`/search#${type}`}>See more</SeeMore>
+            {!group && <SeeMore href={`/search#${type}`}>See more</SeeMore>}
           </Items>
         );
       })}

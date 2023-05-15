@@ -78,7 +78,6 @@ const CartFrame = styled.div`
     }
   }
 `;
-const Btns = styled.div``;
 const BuyList = styled.table`
   width: 100%;
   line-height: 16px;
@@ -99,8 +98,11 @@ const AdsFrame = styled.div`
   @media (max-width: 768px) {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+    gap: 10px;
+    margin-top: 20px;
+    align-items: end;
   }
+
   @media (min-width: 1200px) {
     & div {
       :not(:first-of-type) {
